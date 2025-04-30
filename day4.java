@@ -36,15 +36,15 @@ public class day4 {
     //     return ans;
     // }
 
-    public static int[] runningSum(int[] arr){
-        int sum = 0;
-        int[] result = new int[arr.length];
-        for(int i=0;i<arr.length;i++){
-            sum += arr[i];
-            result[i] = sum;
-        }
-        return result;
-    }
+    // public static int[] runningSum(int[] arr){
+    //     int sum = 0;
+    //     int[] result = new int[arr.length];
+    //     for(int i=0;i<arr.length;i++){
+    //         sum += arr[i];
+    //         result[i] = sum;
+    //     }
+    //     return result;
+    // }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -66,9 +66,9 @@ public class day4 {
         // int[] ans = getConcatenation(arr);
         // System.out.println(Arrays.toString(ans));
 
-        int[] arr = {1,2,3,4};
-        int[] res = runningSum(arr);
-        System.out.println(Arrays.toString(res));
+        // int[] arr = {1,2,3,4};
+        // int[] res = runningSum(arr);
+        // System.out.println(Arrays.toString(res));
 
         sc.close();
     }
