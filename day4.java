@@ -1,4 +1,6 @@
-import java.util.Arrays;
+// import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class day4 {
@@ -46,6 +48,25 @@ public class day4 {
     //     return result;
     // }
 
+    public static List<Boolean> candies(int[] candie, int extra){
+        List<Boolean> res = new ArrayList<>();
+        int max = 0;
+        for(int c : candie){
+            if (c>max) {
+                max = c;
+            }
+        }
+        for(int i=0;i<candie.length;i++){
+            if (candie[i] + extra >= max) {
+                res.add(true);
+            }
+            else{
+                res.add(false);
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // System.out.print("Enter age: ");
@@ -69,6 +90,10 @@ public class day4 {
         // int[] arr = {1,2,3,4};
         // int[] res = runningSum(arr);
         // System.out.println(Arrays.toString(res));
+
+        int[] arr = {2,3,5,1,3};
+        int extra = 3;
+        System.out.println(candies(arr, extra));
 
         sc.close();
     }
