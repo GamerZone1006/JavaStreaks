@@ -21,22 +21,42 @@ public class day7 {
     //     return letters.size() == 26;
     // }
 
-    public static int matches(List<List<String>> items, String rulekey, String rulevalue){
-        int index = 0;
-        if (rulekey.equals("color")) {
-            index = 1;
-        }
-        else if (rulekey.equals("name")) {
-            index = 1;
-        }
-        int count = 0;
-        for(List<String> item : items){
-            if (item.get(index).equals(rulevalue)) {
-                count++;
-            }
-        }
-        return count;
-    }
+    // public static int matches(List<List<String>> items, String rulekey, String rulevalue){
+    //     int index = 0;
+    //     if (rulekey.equals("color")) {
+    //         index = 1;
+    //     }
+    //     else if (rulekey.equals("name")) {
+    //         index = 1;
+    //     }
+    //     int count = 0;
+    //     for(List<String> item : items){
+    //         if (item.get(index).equals(rulevalue)) {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
+
+    // public static int highestAlt(int[] gain){
+    //     int start = 0;
+    //     int max = 0;
+    //     for(int i=0;i<gain.length;i++){
+    //         start += gain[i];
+    //         if (start>max) {
+    //             max = start;
+    //         }
+    //     }
+    //     return max;
+    // }
+
+    // public static int[] permutation(int[] arr){
+    //     int[] res = new int[arr.length];
+    //     for(int i=0;i<arr.length;i++){
+    //         res[i] = arr[arr[i]];
+    //     }
+    //     return res;
+    // }
 
     public static void main(String[] args) {
         // int[] nums = {0,1,2,3,4};
@@ -46,15 +66,13 @@ public class day7 {
         // String s = "thequickbrownfoxjumpsoverthelazydog";
         // System.out.println(isPangram(s));
 
-        List<List<String>> items = List.of(
-            List.of("phone", "blue", "pixel"),
-            List.of("computer", "silver", "lenovo"),
-            List.of("phone", "gold", "iphone")
-        );
-
-        String ruleKey = "color";
-        String ruleValue = "silver";
-
-        System.out.println("Matches: " + matches(items, ruleKey, ruleValue));
+        // List<List<String>> items = List.of(
+        //     List.of("phone", "blue", "pixel"),
+        //     List.of("computer", "silver", "lenovo"),
+        //     List.of("phone", "gold", "iphone")
+        // );
+        // String ruleKey = "color";
+        // String ruleValue = "silver";
+        // System.out.println("Matches: " + matches(items, ruleKey, ruleValue));
     }
 }
