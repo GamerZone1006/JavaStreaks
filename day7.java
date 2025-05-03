@@ -58,6 +58,21 @@ public class day7 {
     //     return res;
     // }
 
+    // public static int[] doubleArray(int[] arr){
+    //     int n1 = arr.length;
+    //     int[] arr2 = new int[n1];
+    //     int n2 = arr2.length;
+    //     int[] res = new int[n1 + n2];
+    //     for(int i=0;i<n1;i++){
+    //         arr2[i] = arr[i];
+    //     }
+    //     System.arraycopy(arr, 0, arr, 0, n1);
+    //     System.arraycopy(arr2, 0, res, n1, n2);
+    //     return res;
+    // }
+
+    
+
     public static void main(String[] args) {
         // int[] nums = {0,1,2,3,4};
         // int[] index = {0,1,2,2,1};
