@@ -72,15 +72,48 @@ public class day7 {
     //     return res;
     // }
 
-    public static int[] running(int[] arr){
-        int sum = 0;
-        int[] res = new int[arr.length];
-        for(int i=0;i<arr.length;i++){
-            sum += arr[i];
-            res[i] = sum;
+    public static ArrayList<Integer> spiralArray(int[][] arr) {
+        ArrayList<Integer> matrix = new ArrayList<>();
+        if (arr == null || arr.length == 0) return matrix;
+        int top = 0;
+        int bottom = arr.length - 1;
+        int left = 0;
+        int right = arr[0].length - 1;
+        while (top <= bottom && left <= right) {
+            for (int i = left; i <= right; i++) {
+                matrix.add(arr[top][i]);
+            }
+            top++;
+            for (int i = top; i <= bottom; i++) {
+                matrix.add(arr[i][right]);
+            }
+            right--;
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) {
+                    matrix.add(arr[bottom][i]);
+                }
+                bottom--;
+            }
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) {
+                    matrix.add(arr[i][left]);
+                }
+                left++;
+            }
         }
-        return res;
+        return matrix;
     }
+    
+
+    // public static int[] running(int[] arr){
+    //     int sum = 0;
+    //     int[] res = new int[arr.length];
+    //     for(int i=0;i<arr.length;i++){
+    //         sum += arr[i];
+    //         res[i] = sum;
+    //     }
+    //     return res;
+    // }
 
     public static void main(String[] args) {
         // int[] nums = {0,1,2,3,4};
@@ -99,8 +132,15 @@ public class day7 {
         // String ruleValue = "silver";
         // System.out.println("Matches: " + matches(items, ruleKey, ruleValue));
 
-        int[] arr = {1,2,3,4};
-        int[] res = running(arr);
-        System.out.println(Arrays.toString(res));
+        // int[] arr = {1,2,3,4};
+        // int[] res = running(arr);
+        // System.out.println(Arrays.toString(res));
+
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        System.out.println(spiralArray(matrix));
     }
 }
