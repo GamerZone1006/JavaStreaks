@@ -4,7 +4,7 @@ public class day7 {
     public static ArrayList<Integer> indexmatch(int[] nums, int[] index){
         ArrayList<Integer> res = new ArrayList<>();
         for(int i=0;i<nums.length;i++){
-            res.add(nums[i],index[i]);
+            res.add(index[i],nums[i]);
         }
         return res;
     }
