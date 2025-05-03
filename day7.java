@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Arrays;
 
 public class day7 {
     // public static ArrayList<Integer> indexmatch(int[] nums, int[] index){
@@ -71,7 +72,15 @@ public class day7 {
     //     return res;
     // }
 
-    
+    public static int[] running(int[] arr){
+        int sum = 0;
+        int[] res = new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            sum += arr[i];
+            res[i] = sum;
+        }
+        return res;
+    }
 
     public static void main(String[] args) {
         // int[] nums = {0,1,2,3,4};
@@ -89,5 +98,9 @@ public class day7 {
         // String ruleKey = "color";
         // String ruleValue = "silver";
         // System.out.println("Matches: " + matches(items, ruleKey, ruleValue));
+
+        int[] arr = {1,2,3,4};
+        int[] res = running(arr);
+        System.out.println(Arrays.toString(res));
     }
 }
