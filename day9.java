@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class day9 {
 
     // public static int targetinChunk(int[] arr,int target){
@@ -32,19 +34,39 @@ public class day9 {
     //     return -1;
     // }
 
-    public static int peak(int[] arr){
-        int start = 0;
-        int end = arr.length-1;
-        while (end > start) {
-            int mid = start + (end - start)/2;
-            if (arr[mid]>arr[mid+1]) {
-                end = mid;
+    // public static int peak(int[] arr){
+    //     int start = 0;
+    //     int end = arr.length-1;
+    //     while (end > start) {
+    //         int mid = start + (end - start)/2;
+    //         if (arr[mid]>arr[mid+1]) {
+    //             end = mid;
+    //         }
+    //         else{
+    //             start = mid + 1;
+    //         }
+    //     }
+    //     return start;
+    // }
+
+    public static int[] twoDbs(int[][] mat, int target){
+        int r = 0;
+        int c = mat[0].length-1;
+        int[] res = {-1,-1};
+        while (r<mat.length && c>=0) {
+            if (mat[r][c] == target) {
+                res[0] = r;
+                res[1] = c;
+                return res;
+            }
+            else if(mat[r][c] < target){
+                r++;
             }
             else{
-                start = mid + 1;
+                c--;
             }
         }
-        return start;
+        return res;
     }
 
     public static void main(String[] args) {
@@ -52,7 +74,16 @@ public class day9 {
         // int target = 12;
         // System.out.println(targetinChunk(arr, target));
 
-        int[] mountArr = {0,1,2,3,1,0};
-        System.out.println(peak(mountArr)); 
+        // int[] mountArr = {0,1,2,3,1,0};
+        // System.out.println(peak(mountArr));
+
+        int[][] mat = {
+            {10,20,30,40},
+            {15,25,35,45},
+            {28,29,37,49},
+            {33,34,38,50}
+        };
+        int target = 35;
+        System.out.println(Arrays.toString(twoDbs(mat, target)));
     }
 }
