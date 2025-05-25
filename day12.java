@@ -200,20 +200,35 @@ public class day12 {
     //     }
     // }
 
-    public static void hollowSq(int n){
-        for(int i=1;i<=n;i++){
-            for(int j=1;j<n;j++){
-                if (i==1||i==n||j==1||j==(n-1)) {
-                    System.out.print("*");
-                }
-                else{
-                    System.out.print(" ");
-                }
+    // public static void hollowSq(int n){
+    //     for(int i=1;i<=n;i++){
+    //         for(int j=1;j<n;j++){
+    //             if (i==1||i==n||j==1||j==(n-1)) {
+    //                 System.out.print("*");
+    //             }
+    //             else{
+    //                 System.out.print(" ");
+    //             }
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    public static void DiaInSq(int n){
+        for(int i=1;i<=2*n;i++){
+            int col;
+            if (i<=5) {
+                col = 2*n - 2;
+            }
+            else if (i>5) {
+                col = 2*(2*n - i);
+            }
+            for(int j=1;j<=2*n;j++){
+                System.out.print("*");
             }
             System.out.println();
         }
     }
-
     
     public static void main(String[] args) {
         int n=5;
@@ -230,6 +245,7 @@ public class day12 {
         // hollowTri(n);
         // revHollowTri(n);
         // hollowDiamond(n);
-        hollowSq(n);
+        // hollowSq(n);
+        DiaInSq(n);
     }
 }
