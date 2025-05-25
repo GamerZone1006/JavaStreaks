@@ -146,14 +146,64 @@ public class day12 {
     //     }
     // }
 
-    public static void revHollowTri(int n){
+    // public static void revHollowTri(int n){
+    //     for(int i=1;i<=n;i++){
+    //         int spaces=i-1;
+    //         for(int k=0;k<spaces;k++){
+    //             System.out.print(" ");
+    //         }
+    //         for(int j=1;j<=2*(n-i)+1;j++){
+    //             if(i==1 || j==1 || j==(2*(n-i) + 1)){
+    //                 System.out.print("*");
+    //             }
+    //             else{
+    //                 System.out.print(" ");
+    //             }
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    // public static void hollowDiamond(int n){
+    //      *
+    //     * *
+    //    * * *
+    //   * * * *
+    //  * * * * *
+    //   *     *
+    //    *   *
+    //     * *
+    //      *
+    //     for(int i=1;i<=(2*n-1);i++){
+    //         int spaces;
+    //         int col;
+    //         if (i>n) {
+    //             col = 2*n - i;
+    //             spaces = i - n;
+    //         }
+    //         else{
+    //             col = i;
+    //             spaces = n-i;
+    //         }
+    //         for(int k=0;k<spaces;k++){
+    //             System.out.print(" ");
+    //         }
+    //         for(int j=1;j<=2*col-1;j++){
+    //             if (j==1 || j==(2*col -1)) {
+    //                 System.out.print("* ");
+    //             }
+    //             else{
+    //                 System.out.print(" ");
+    //             }
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    public static void hollowSq(int n){
         for(int i=1;i<=n;i++){
-            int spaces=i-1;
-            for(int k=0;k<spaces;k++){
-                System.out.print(" ");
-            }
-            for(int j=1;j<=2*(n-i)+1;j++){
-                if(i==1 || j==1 || j==(2*(n-i) + 1)){
+            for(int j=1;j<n;j++){
+                if (i==1||i==n||j==1||j==(n-1)) {
                     System.out.print("*");
                 }
                 else{
@@ -178,6 +228,8 @@ public class day12 {
         // revTripattern(n);
         // ultaDiamond(n);
         // hollowTri(n);
-        revHollowTri(n);
+        // revHollowTri(n);
+        // hollowDiamond(n);
+        hollowSq(n);
     }
 }
