@@ -177,22 +177,35 @@ public class game1{
     //     return res;
     // }
 
-    public static int rich(int[][] arr){
-        int maxmoney = 0;
-        for(int i=0;i<arr.length;i++){
-            int sum = 0;
-            for(int j=0;j<arr[i].length;j++){
-                sum += arr[i][j];
+    // public static int rich(int[][] arr){
+    //     int maxmoney = 0;
+    //     for(int i=0;i<arr.length;i++){
+    //         int sum = 0;
+    //         for(int j=0;j<arr[i].length;j++){
+    //             sum += arr[i][j];
+    //         }
+    //         maxmoney = Math.max(maxmoney, sum);
+    //     }
+    //     return maxmoney;
+    // }
+
+    public static void sqPattern(int n){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                System.out.println("* ");
             }
-            maxmoney = Math.max(maxmoney, sum);
+            System.out.println();
         }
-        return maxmoney;
     }
+
     public static void main(String[] args) {
-        int[][] arr = {
-            {1,2,3},
-            {3,2,1}
-        };
-        System.out.println(rich(arr));
+        // int[][] arr = {
+        //     {1,2,3},
+        //     {3,2,1}
+        // };
+        // System.out.println(rich(arr));
+
+        int n=5;
+        sqPattern(n);
     }
 }

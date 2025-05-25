@@ -21,6 +21,18 @@ public class day2{
         // float avg = (float)sum/n;
         // System.out.println("Average is "+avg);
 
+
+        // System.out.print("Enter total number of digits = ");
+        // int n = sc.nextInt();
+        // int sum = 0;
+        // System.out.print("Enter the digits = ");
+        // for(int i=0;i<n;i++){
+        //     int num = sc.nextInt();
+        //     sum += num;
+        // }
+        // System.out.println(sum);
+        // float avg = (float)sum/n;
+        // System.out.println("Average: "+avg);
         sc.close();
     }
 }
