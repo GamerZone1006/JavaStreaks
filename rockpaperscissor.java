@@ -1,5 +1,12 @@
 import java.util.Scanner;
 public class rockpaperscissor {
+    public static boolean game(int bot, int choice){
+        if((bot==1 && choice==2) || (bot==2 && choice==3) || (bot==3 && choice==1)){
+            return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("1-Rock, 2-Paper, 3-Scissor");
@@ -7,6 +14,7 @@ public class rockpaperscissor {
         int choice = sc.nextInt();
         if (choice>3 || choice<1) {
             System.out.println("Invalid!");
+            sc.close();
             return;
         }
         int min=1;
@@ -16,7 +24,7 @@ public class rockpaperscissor {
         if (bot==choice) {
             System.out.println("Draw, try again!");
         }
-        else if((bot==1 && choice==2) || (bot==2 && choice==3) || (bot==3 && choice==1)){
+        else if(game(bot, choice)){
             System.out.println("You Win!");
         }
         else{
