@@ -215,15 +215,28 @@ public class day12 {
     // }
 
     public static void DiaInSq(int n){
+        int stars = 0;
+        int spaces = 0;
         for(int i=1;i<=2*n;i++){
-            int col;
-            if (i<=5) {
-                col = 2*n - 2;
+            if(i<=n){
+                stars = n-i+1;
             }
-            else if (i>5) {
-                col = 2*(2*n - i);
+            if(i>n){
+                stars = i-n;
             }
-            for(int j=1;j<=2*n;j++){
+            if (i<=n) {
+                spaces = 2*(i-1);
+            }
+            if (i>n) {
+                spaces = 2*(2*n - i);
+            }
+            for(int j=1;j<=stars;j++){
+                System.out.print("*");
+            }
+            for(int j=1;j<=spaces;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=stars;j++){
                 System.out.print("*");
             }
             System.out.println();
