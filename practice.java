@@ -1,0 +1,94 @@
+public class practice {
+
+    //armstrong number using recursion
+    // public static int armstrong(int n){
+    //     if (n==0) {
+    //         return 0;
+    //     }
+    //     int i=n%10;
+    //     int cube = i*i*i;
+    //     return cube + armstrong(n/10);
+    // }
+    // public static boolean isArm(int n){
+    //     return n == armstrong(n);
+    // }
+
+    //printing n to 1 using recursion
+    // public static void ntoone(int n){
+    //     if(n == 0){
+    //         return;
+    //     }
+    //     System.out.println(n);
+    //     ntoone(n-1);
+    // }
+
+    //factorial using recursion
+    // public static int factorial(int n){
+    //     if (n<2) {
+    //         return 1;
+    //     }
+    //     return n*factorial(n-1);
+    // }
+
+    //sum of digits using recursion
+    // public static int sumOfDigits(int n){
+    //     if (n==0) {
+    //         return n;
+    //     }
+    //     return (n%10) + sumOfDigits(n/10);
+    // }
+
+    //product of digits
+    // public static int prodofDigits(int n){
+    //     if (n<=1) {
+    //         return n;
+    //     }
+    //     return (n%10) * prodofDigits(n/10);
+    // }
+
+    //reverse a number
+    // public static int reverse(int n, int rev){
+    //     if (n<1) {
+    //         return rev;
+    //     }
+    //     return reverse(n/10, rev*10+(n%10));
+    // }
+
+    // public static boolean isPalin(int n){
+    //     return n == reverse(n, 0);
+    // }
+
+    //no of zeros
+    // public static int noofzeros(int n, int count){
+    //     if (n<1) {
+    //         return count;
+    //     }
+    //     if (n%10==0) {
+    //         return noofzeros(n/10, count+1);
+    //     }
+    //     return noofzeros(n/10, count);
+    // }
+
+    //no of steps to make 0
+    public static int steps(int n, int step){
+        if (n<1) {
+            return step;
+        }
+        if (n%2==0) {
+            return steps(n/2, step+1);
+        }
+        return steps(n-1, step+1);
+    }
+
+    public static void main(String[] args) {
+        // System.out.println(isArm(111));
+        // ntoone(5);
+        // System.out.println(factorial(5));
+        // System.out.println(sumOfDigits(12345));
+        // System.out.println(prodofDigits(12345));
+        // System.out.println(reverse(12034, 0));
+        // System.out.println(isPalin(40404));
+        // System.out.println(noofzeros(304020, 0));
+        System.out.println(steps(14, 0));
+    }
+}
