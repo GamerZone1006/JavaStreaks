@@ -214,21 +214,56 @@ public class day12 {
     //     }
     // }
 
-    public static void DiaInSq(int n){
-        int stars = 0;
-        int spaces = 0;
-        for(int i=1;i<=2*n;i++){
-            if(i<=n){
-                stars = n-i+1;
-            }
-            if(i>n){
-                stars = i-n;
-            }
+    // public static void DiaInSq(int n){
+    //     int stars = 0;
+    //     int spaces = 0;
+    //     for(int i=1;i<=2*n;i++){
+    //         if(i<=n){
+    //             stars = n-i+1;
+    //         }
+    //         if(i>n){
+    //             stars = i-n;
+    //         }
+    //         if (i<=n) {
+    //             spaces = 2*(i-1);
+    //         }
+    //         if (i>n) {
+    //             spaces = 2*(2*n - i);
+    //         }
+    //         for(int j=1;j<=stars;j++){
+    //             System.out.print("*");
+    //         }
+    //         for(int j=1;j<=spaces;j++){
+    //             System.out.print(" ");
+    //         }
+    //         for(int j=1;j<=stars;j++){
+    //             System.out.print("*");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    //bow pattern
+    public static void bow(int n){
+        // *       *
+        // **     **
+        // ***   ***
+        // **** ****
+        // *********
+        // **** ****
+        // ***   ***
+        // **     **
+        // *       *
+        for(int i=1;i<=(2*n-1);i++){
+            int stars = 0;
+            int spaces =0;
             if (i<=n) {
-                spaces = 2*(i-1);
+                stars = i;
+                spaces = 2*(n-i);
             }
             if (i>n) {
-                spaces = 2*(2*n - i);
+                stars = (2*n-i);
+                spaces = 2*(i-n);
             }
             for(int j=1;j<=stars;j++){
                 System.out.print("*");
@@ -259,6 +294,7 @@ public class day12 {
         // revHollowTri(n);
         // hollowDiamond(n);
         // hollowSq(n);
-        DiaInSq(n);
+        // DiaInSq(n);
+        bow(n);
     }
 }

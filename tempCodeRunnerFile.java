@@ -1,3 +1,3 @@
-if (start>end) {
-        //     return -1;
-        // }
+ (index == arr.length) {
+            return res;
+        }

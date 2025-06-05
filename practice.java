@@ -70,14 +70,86 @@ public class practice {
     // }
 
     //no of steps to make 0
-    public static int steps(int n, int step){
-        if (n<1) {
-            return step;
+    // public static int steps(int n, int step){
+    //     if (n<1) {
+    //         return step;
+    //     }
+    //     if (n%2==0) {
+    //         return steps(n/2, step+1);
+    //     }
+    //     return steps(n-1, step+1);
+    // }
+
+    // public static void bow(int n){
+    //     printUpper(n,1);
+    //     printLower(n,n-1);
+    // }
+
+    // public static void printUpper(int n, int i){
+    //     if (i>n) {
+    //         return;
+    //     }
+    //     int stars = i;
+    //     int spaces = 2*(n-i);
+    //     printChars("*", stars);
+    //     printChars(" ", spaces);
+    //     printChars("*", stars);
+    //     System.out.println();
+    //     printUpper(n, i+1);
+    // }
+
+    // public static void printLower(int n, int i){
+    //     if (i==0) {
+    //         return;
+    //     }
+    //     int stars = i;
+    //     int spaces = 2*(n-i);
+    //     printChars("*", stars);
+    //     printChars(" ", spaces);
+    //     printChars("*", stars);
+    //     System.out.println();
+    //     printLower(n, i-1);
+    // }
+
+    // public static void printChars(String ch, int count){
+    //     if (count==0) {
+    //         return;
+    //     }
+    //     System.out.print(ch);
+    //     printChars(ch, count-1);
+    // }
+
+    public static void hollowDiamond(int n){
+        printUpper(n, 1);
+        printLower(n, n-1);
+    }
+
+    public static void printUpper(int n, int i){
+        int stars = n-i+1;
+        int spaces = i-1;
+        printChars("*", stars);
+        printChars(" ", spaces);
+        printChars("*", stars);
+        System.out.println();
+        printUpper(n, i+1);
+    }
+
+    public static void printLower(int n, int i){
+        int stars = n-i+1;
+        int spaces = i-1;
+        printChars("*", stars);
+        printChars(" ", spaces);
+        printChars("*", stars);
+        System.out.println();
+        printLower(n, i+1);
+    }
+
+    public static void printChars(String ch, int count){
+        if (count == 0) {
+            return;
         }
-        if (n%2==0) {
-            return steps(n/2, step+1);
-        }
-        return steps(n-1, step+1);
+        System.out.print(ch);
+        printChars(ch, count-1);
     }
 
     public static void main(String[] args) {
@@ -89,6 +161,8 @@ public class practice {
         // System.out.println(reverse(12034, 0));
         // System.out.println(isPalin(40404));
         // System.out.println(noofzeros(304020, 0));
-        System.out.println(steps(14, 0));
+        // System.out.println(steps(14, 0));
+        // bow(5);
+        hollowDiamond(5);
     }
 }

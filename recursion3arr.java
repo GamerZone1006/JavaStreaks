@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class recursion3arr {
 
@@ -114,18 +115,63 @@ public class recursion3arr {
     // }
 
     //normal triangel
-    public static void tri(int row, int col, int n){
-        if (row == n) {
+    // public static void tri(int row, int col, int n){
+    //     if (row == n) {
+    //         return;
+    //     }
+    //     if (col<=row) {
+    //         System.out.print("* ");
+    //         tri(row, col+1, n);
+    //     }
+    //     else{
+    //         System.out.println();
+    //         tri(row+1, 0, n);
+    //     }
+    // }
+
+    //bubble sort using recursion
+    // public static void bs(int[] arr, int row, int col){
+    //     if (row == 0) {
+    //         return;
+    //     }
+    //     if (row == col) {
+    //         bs(arr, row -1,0);
+    //         return;
+    //     }
+    //     if (arr[col]>arr[col+1]) {
+    //         int temp = arr[col];
+    //         arr[col] = arr[col+1];
+    //         arr[col+1] = temp;
+    //     }
+    //     bs(arr, row, col+1);
+    // }
+
+    public static void swap(int[] arr, int first, int last){
+        int temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+    }
+
+    public static int max(int[] arr, int start, int end){
+        int max = start;
+        for(int i=start; i<=end;i++){
+            if (arr[i]>arr[max]) {
+                max = i;
+            }
+        }
+        return max;
+    }
+
+    public static void ss(int[] arr, int start, int end){
+        if (end == 0) {
             return;
         }
-        if (col<=row) {
-            System.out.print("* ");
-            tri(row, col+1, n);
+        int max = max(arr, start, end);
+        int last = end;
+        if (arr[last]<arr[max]) {
+            swap(arr, max, last);
         }
-        else{
-            System.out.println();
-            tri(row+1, 0, n);
-        }
+        ss(arr, start, end - 1);
     }
 
     public static void main(String[] args) {
@@ -143,6 +189,11 @@ public class recursion3arr {
         // System.out.println(rbs(arr, 1, 0, arr.length-1));
         // sqStars(0, 0, 5);
         // revTri(0, 0, 5);
-        tri(0, 0, 5);
+        // tri(0, 0, 5);
+        int[] arr = {4,3,2,1};
+        // bs(arr, arr.length-1, 0);
+        // System.out.println(Arrays.toString(arr));
+        ss(arr, 0, arr.length-1);
+        System.out.println(Arrays.toString(arr));
     }
 }

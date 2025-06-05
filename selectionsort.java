@@ -1,31 +1,31 @@
 import java.util.Arrays;
 
 public class selectionsort {
-    // public static int max(int[] arr, int start, int end){
-    // int max = start;
-    // for(int i=start;i<end;i++){
-    // if (arr[max] < arr[i]) {
-    // max = i;
-    // }
-    // }
-    // return max;
-    // }
-
-    // public static void swap(int[] arr, int first, int last){
-    // for(int i=0;i<arr.length;i++){
-    // int temp = arr[first];
-    // arr[first] = arr[last];
-    // arr[last] = temp;
-    // }
+    // public static int max(int[] arr, int start, int end) {
+    //     int max = start;
+    //     for (int i = start; i < end; i++) {
+    //         if (arr[max] < arr[i]) {
+    //             max = i;
+    //         }
+    //     }
+    //     return max;
     // }
 
-    // public static void ss(int[] arr){
-    // for(int i=0;i<arr.length;i++){
-    // int last = arr.length -i - 1;
-    // int maxInd = max(arr, 0, last);
-    // swap(arr, maxInd, last);
+    // public static void swap(int[] arr, int first, int last) {
+    //     for (int i = 0; i < arr.length; i++) {
+    //         int temp = arr[first];
+    //         arr[first] = arr[last];
+    //         arr[last] = temp;
+    //     }
     // }
-    // System.out.println(Arrays.toString(arr));
+
+    // public static void ss(int[] arr) {
+    //     for (int i = 0; i < arr.length; i++) {
+    //         int last = arr.length - i - 1;
+    //         int maxInd = max(arr, 0, last);
+    //         swap(arr, maxInd, last);
+    //     }
+    //     System.out.println(Arrays.toString(arr));
     // }
 
     // Sorting in descending order
@@ -47,7 +47,7 @@ public class selectionsort {
 
     public static void desc(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            int last = arr.length - i -1;
+            int last = arr.length - i - 1;
             int minInd = getMin(arr, 0, last);
             swap(arr, minInd, last);
         }
