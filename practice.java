@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class practice {
 
     //armstrong number using recursion
@@ -119,37 +121,66 @@ public class practice {
     //     printChars(ch, count-1);
     // }
 
-    public static void hollowDiamond(int n){
-        printUpper(n, 1);
-        printLower(n, n-1);
-    }
+    // public static void hollowDiamond(int n){
+    //     printUpper(n, 1);
+    //     printLower(n, n-1);
+    // }
 
-    public static void printUpper(int n, int i){
-        int stars = n-i+1;
-        int spaces = i-1;
-        printChars("*", stars);
-        printChars(" ", spaces);
-        printChars("*", stars);
-        System.out.println();
-        printUpper(n, i+1);
-    }
+    // public static void printUpper(int n, int i){
+    //     int stars = n-i+1;
+    //     int spaces = i-1;
+    //     printChars("*", stars);
+    //     printChars(" ", spaces);
+    //     printChars("*", stars);
+    //     System.out.println();
+    //     printUpper(n, i+1);
+    // }
 
-    public static void printLower(int n, int i){
-        int stars = n-i+1;
-        int spaces = i-1;
-        printChars("*", stars);
-        printChars(" ", spaces);
-        printChars("*", stars);
-        System.out.println();
-        printLower(n, i+1);
-    }
+    // public static void printLower(int n, int i){
+    //     int stars = n-i+1;
+    //     int spaces = i-1;
+    //     printChars("*", stars);
+    //     printChars(" ", spaces);
+    //     printChars("*", stars);
+    //     System.out.println();
+    //     printLower(n, i+1);
+    // }
 
-    public static void printChars(String ch, int count){
-        if (count == 0) {
-            return;
+    // public static void printChars(String ch, int count){
+    //     if (count == 0) {
+    //         return;
+    //     }
+    //     System.out.print(ch);
+    //     printChars(ch, count-1);
+    // }
+
+    // public static int[] twoSum(int[] arr, int target) {
+    //     int[] res = new int[2];
+    //     for(int i=0;i<=arr.length - 1;i++){
+    //         for(int j=1;j<arr.length - 1;j++){
+    //             if(arr[i]+arr[j] == target){
+    //                 res[0] = i;
+    //                 res[1] = j;
+    //             }
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    public static int[] twoSum(int[] arr, int target){
+        return helper(arr, target, 0, 1);
+    }
+    public static int[] helper(int[] arr, int target, int i, int j){
+        if (i>arr.length) {
+            return new int[]{};
         }
-        System.out.print(ch);
-        printChars(ch, count-1);
+        if(j>=arr.length){
+            return helper(arr, target, i+1, j+2);
+        }
+        if (target == arr[i]+arr[j]) {
+            return new int[]{i, j};
+        }
+        return helper(arr, target, i, j+1);
     }
 
     public static void main(String[] args) {
@@ -163,6 +194,9 @@ public class practice {
         // System.out.println(noofzeros(304020, 0));
         // System.out.println(steps(14, 0));
         // bow(5);
-        hollowDiamond(5);
+        // hollowDiamond(5);
+        int[] arr = {3,3};
+        int[] res = twoSum(arr, 6);
+        System.out.println(Arrays.toString(res));
     }
 }
