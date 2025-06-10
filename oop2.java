@@ -44,6 +44,9 @@
 // }
 
 //Inheritance
+
+import javax.swing.Box;
+
 class Box {
     double l;
     double b;
@@ -101,6 +104,7 @@ public class oop2 {
         // System.out.println(h2.age+h2.name+h2.salary);
 
         Box box = new Box(4, 3, 2);
+        Box b2 = new Box(box);
         System.out.println(box.l + " "+ box.b+" "+box.w);
     }
 }
