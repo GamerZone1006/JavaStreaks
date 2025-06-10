@@ -93,17 +93,59 @@ public class leetcode {
     // }
 
     //three sum
-    public static int[] threeSum(int[] arr, int target){
-        for(int i=0;i<arr.length-2;i++){
-            for(int j=i+1; j<arr.length-1;j++){
-                for(int k=j+1;i<arr.length;k++){
-                    if (arr[i]+arr[j]+arr[k] == target) {
-                        return new int[]{i,j,k};
-                    }
-                }
-            }
+    // public static int[] threeSum(int[] arr, int target){
+    //     for(int i=0;i<arr.length-2;i++){
+    //         for(int j=i+1; j<arr.length-1;j++){
+    //             for(int k=j+1;i<arr.length;k++){
+    //                 if (arr[i]+arr[j]+arr[k] == target) {
+    //                     return new int[]{i,j,k};
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return new int[]{-1,-1,-1};
+    // }
+
+    //leetcode 35. search insert position
+    // public static int searchIndex(int[] arr, int target){
+    //     int start = 0;
+    //     int end = arr.length-1;
+    //     while (start<end) {
+    //         int mid = (end-start)/2 + start;
+    //         if (target == arr[mid]) {
+    //             return mid;
+    //         }
+    //         if (target<arr[mid]) {
+    //             end = mid - 1;
+    //         }
+    //         else{
+    //             start = mid + 1;
+    //         }
+    //     }
+    //     return start+1;
+    // }
+
+    //returning weight of last word 
+    // public static int lengthofLastWord(String s){
+    //     String[] arr = s.split(" ");
+    //     String last = arr[arr.length - 1];
+    //     return last.length();
+    // }
+
+    //adding one and returning to the array
+    public static int[] plusOne(int[] arr){
+        int num = 0;
+        for(int i=0;i<arr.length;i++){
+            num = num*10 + arr[i];
         }
-        return new int[]{-1,-1,-1};
+        num += 1;
+        String number = Integer.toString(num);
+        String[] array = number.split("");
+        int[] finalArr = new int[array.length];
+        for(int i=0;i<arr.length;i++){
+            finalArr[i] = Integer.parseInt(array[i]);
+        }
+        return finalArr;
     }
 
     public static void main(String[] args) {
@@ -114,7 +156,12 @@ public class leetcode {
         // System.out.println(removeElement(arr, value));
         // System.out.println(needleHaystick("iamsad", "sad"));
         // System.out.println(divide(10, 3));
-        int[] arr = {2,32,4,5,10, 6};
-        System.out.println(Arrays.toString(threeSum(arr, 40)));
+        // int[] arr = {2,32,4,5,10, 6};
+        // System.out.println(Arrays.toString(threeSum(arr, 40)));
+        // int[] arr = {1,3,5,6};
+        // System.out.println(searchIndex(arr, 5));
+        // System.out.println(lengthofLastWord("luffy is still joyboy"));
+        int[] arr = {9};
+        System.out.println(Arrays.toString(plusOne(arr)));
     }
 }
