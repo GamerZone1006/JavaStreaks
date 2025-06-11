@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class leetcode {
@@ -133,19 +134,65 @@ public class leetcode {
     // }
 
     //adding one and returning to the array
-    public static int[] plusOne(int[] arr){
-        int num = 0;
-        for(int i=0;i<arr.length;i++){
-            num = num*10 + arr[i];
+    // public static int[] plusOne(int[] arr){
+    //     int num = 0;
+    //     for(int i=0;i<arr.length;i++){
+    //         num = num*10 + arr[i];
+    //     }
+    //     num += 1;
+    //     String number = Integer.toString(num);
+    //     String[] array = number.split("");
+    //     int[] finalArr = new int[array.length];
+    //     for(int i=0;i<arr.length;i++){
+    //         finalArr[i] = Integer.parseInt(array[i]);
+    //     }
+    //     return finalArr;
+    // }
+
+    // public static int[] plusOne(int[] digits){
+    //     for(int i=digits.length-1;i>=0;i--){
+    //         if (digits[i]<9) {
+    //             digits[i]++;
+    //             return digits;
+    //         }
+    //         digits[i] = 0;
+    //     }
+    //     int[] res = new int[digits.length+1];
+    //     res[0] = 1;
+    //     return res; 
+    // }
+
+    //square root
+    // public static int sqrt(int n){
+        // if (n==0 || n==1) {
+        //     return n;
+        // }
+        // for(int i=0;i<=n;i++){
+        //     if (i*i == n) {
+        //         return i;
+        //     }
+        //     else if(i*i>n){
+        //         return i-1;
+        //     }
+        // }
+        // return -1;
+    // }
+
+    //merge sorted arrays
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        for(int i=0;i<n;i++){
+            nums1[m+i] = nums2[i];
         }
-        num += 1;
-        String number = Integer.toString(num);
-        String[] array = number.split("");
-        int[] finalArr = new int[array.length];
-        for(int i=0;i<arr.length;i++){
-            finalArr[i] = Integer.parseInt(array[i]);
+        for(int i=0;i<nums1.length;i++){
+            for(int j=1;j<nums1.length - i;j++){
+                if (nums1[j]<nums1[j-1]) {
+                    int temp = nums1[j];
+                    nums1[j] = nums1[j-1];
+                    nums1[j-1] = temp;
+                }
+            }
         }
-        return finalArr;
+        System.out.println(Arrays.toString(nums1));
     }
 
     public static void main(String[] args) {
@@ -161,7 +208,11 @@ public class leetcode {
         // int[] arr = {1,3,5,6};
         // System.out.println(searchIndex(arr, 5));
         // System.out.println(lengthofLastWord("luffy is still joyboy"));
-        int[] arr = {9};
-        System.out.println(Arrays.toString(plusOne(arr)));
+        // int[] arr = {9};
+        // System.out.println(Arrays.toString(plusOne(arr)));
+        // System.out.println(sqrt(10));
+        int[] n1 = {1,2,3,0,0,0};
+        int[] n2 = {2,5,6};
+        merge(n1, 3, n2, 3);
     }
 }
