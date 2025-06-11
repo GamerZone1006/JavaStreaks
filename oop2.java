@@ -45,42 +45,58 @@
 
 //Inheritance
 
-import javax.swing.Box;
+// import javax.swing.Box;
 
-class Box {
-    double l;
-    double b;
-    double w;
+// class Box {
+//     double l;
+//     double b;
+//     double w;
 
-    Box(){
-        this.l = -1;
-        this.b = -1;
-        this.w = -1;
-    }
+//     Box(){
+//         this.l = -1;
+//         this.b = -1;
+//         this.w = -1;
+//     }
 
     //cube
-    Box(double side){
-        this.l = side;
-        this.b = side;
-        this.w = side;
-    }
+//     Box(double side){
+//         this.l = side;
+//         this.b = side;
+//         this.w = side;
+//     }
 
-    Box(double l, double b, double w){
-        this.l = l;
-        this.b = b;
-        this.w = w;
-    }
+//     Box(double l, double b, double w){
+//         this.l = l;
+//         this.b = b;
+//         this.w = w;
+//     }
 
-    Box(Box old){
-        this.l = old.l;
-        this.b = old.b;
-        this.w = old.w;
-    }
+//     Box(Box old){
+//         this.l = old.l;
+//         this.b = old.b;
+//         this.w = old.w;
+//     }
 
-    public void info(){
-        System.out.println("Box");
-    }
-}
+//     public void info(){
+//         System.out.println("Box");
+//     }
+// }
+
+// class Animal {
+//     Animal(){
+//         System.out.println("Animal class");
+//     }
+// }
+
+// class Dog extends Animal{
+//     Dog(){
+//         super();
+//         System.out.println("Dog class");
+//     }
+// }
+
+//Single Inheritance
+
 
 public class oop2 {
     public static void main(String[] args) {
@@ -103,8 +119,10 @@ public class oop2 {
         // h2.speak();
         // System.out.println(h2.age+h2.name+h2.salary);
 
-        Box box = new Box(4, 3, 2);
-        Box b2 = new Box(box);
-        System.out.println(box.l + " "+ box.b+" "+box.w);
+        // Box box = new Box(4, 3, 2);
+        // Box b2 = new Box(box);
+        // System.out.println(box.l + " "+ box.b+" "+box.w);
+
+        // Dog d = new Dog();
     }
 }

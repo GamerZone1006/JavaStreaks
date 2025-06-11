@@ -179,20 +179,80 @@ public class leetcode {
     // }
 
     //merge sorted arrays
-    public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        for(int i=0;i<n;i++){
-            nums1[m+i] = nums2[i];
-        }
-        for(int i=0;i<nums1.length;i++){
-            for(int j=1;j<nums1.length - i;j++){
-                if (nums1[j]<nums1[j-1]) {
-                    int temp = nums1[j];
-                    nums1[j] = nums1[j-1];
-                    nums1[j-1] = temp;
-                }
-            }
-        }
-        System.out.println(Arrays.toString(nums1));
+    // public static void merge(int[] nums1, int m, int[] nums2, int n) {
+    //     for(int i=0;i<n;i++){
+    //         nums1[m+i] = nums2[i];
+    //     }
+    //     for(int i=0;i<nums1.length;i++){
+    //         for(int j=1;j<nums1.length - i;j++){
+    //             if (nums1[j]<nums1[j-1]) {
+    //                 int temp = nums1[j];
+    //                 nums1[j] = nums1[j-1];
+    //                 nums1[j-1] = temp;
+    //             }
+    //         }
+    //     }
+    //     System.out.println(Arrays.toString(nums1));
+    // }
+
+    // public static boolean isPalin(String s){
+        // s = s.replaceAll("[^a-zA-Z0-9]", "");
+        // s = s.toLowerCase();
+        // int n = s.length();
+        // for(int i=0;i<n/2;i++){
+        //     if (s.charAt(i) != s.charAt(n-1-i)) {
+        //         return false;
+        //     }
+        // }
+        // return true;
+
+        // char[] charArr = new char[s.length()];
+        // int n = 0;
+        // for(char c: s.toCharArray()){
+        //     if(c >= 'A' && c <= 'Z')
+        //         charArr[n++] = (char) (32 + c);
+        //     else if(c >= 'a' && c <= 'z' || c >= '0' && c <= '9')
+        //         charArr[n++] = c;
+        // }
+        // int l=0, r=n-1;
+        // while(l<r){
+        //     if(charArr[l++]!=charArr[r--]) return false;
+        // }
+        // return true; 
+    // }
+
+    // public static int single(int[] arr){
+    //     boolean swapped;
+    //     for(int i=0;i<arr.length;i++){
+    //         swapped = true;
+    //         for(int j=1;j<arr.length;j++){
+    //             if (arr[j]<arr[j-1]) {
+    //                 int temp = arr[j];
+    //                 arr[j] = arr[j-1];
+    //                 arr[j-1] = temp;
+    //             }
+    //         }
+    //         if (!swapped) {
+    //             break;
+    //         }
+    //     }
+    //     for(int i=0;i<arr.length-1;i+=2){
+    //         if (arr[i] != arr[i+1]) {
+    //             return arr[i];
+    //         }
+    //     }
+    //     return arr[arr.length-1];
+    // }
+
+    // public static String convertToTitle(int columnNumber) {
+    //     if(columnNumber>=1 && columnNumber<=26){
+    //         char ch = 
+    //     }
+    // }
+
+    public static int majElem(int[] arr){
+        Arrays.sort(arr);
+        return arr[arr.length/2];
     }
 
     public static void main(String[] args) {
@@ -211,8 +271,15 @@ public class leetcode {
         // int[] arr = {9};
         // System.out.println(Arrays.toString(plusOne(arr)));
         // System.out.println(sqrt(10));
-        int[] n1 = {1,2,3,0,0,0};
-        int[] n2 = {2,5,6};
-        merge(n1, 3, n2, 3);
+        // int[] n1 = {1,2,3,0,0,0};
+        // int[] n2 = {2,5,6};
+        // merge(n1, 3, n2, 3);
+        // String s = "A man, a plan, a canal: Panama";
+        // System.out.println(isPalin(s));
+        // int[] arr = {4,1,2,1,2};
+        // System.out.println(single(arr));
+        // System.out.println(convertToTitle(5));
+        int[] arr = {2,2,1,1,1,2,2};
+        System.out.println(majElem(arr));
     }
 }
