@@ -115,21 +115,24 @@
 // }
 
 //Interface inside interface
-interface Parent{
-    void parentInterf();
-    interface Child{
-        void childInterf();
-    }
-}
+// interface Parent{
+//     void parentInterf();
+//     interface Child{
+//         void childInterf();
+//     }
+// }
 
-class IinsideI implements Parent{
-    public void parentInterf(){
-        System.out.println("Mei bhar wala hu");
-    }
-    public void childInterf(){
-        System.out.println("Mei andar wala hu");
-    }
-}
+// class IinsideI implements Parent{
+//     public void parentInterf(){
+//         System.out.println("Mei bhar wala hu");
+//     }
+//     public void childInterf(){
+//         System.out.println("Mei andar wala hu");
+//     }
+// }
+
+//Annotations: tags or labels in code that tell the compiler how to treat it
+// @Override: tells the complier that this method is suppose to override a method from a superclass.
 
 public class opps4 {
     public static void main(String[] args) {
@@ -155,8 +158,8 @@ public class opps4 {
         // ImpInner nest = new ImpInner();
         // nest.sayHi();
 
-        IinsideI in = new IinsideI();
-        in.parentInterf();
-        in.childInterf();
+        // IinsideI in = new IinsideI();
+        // in.parentInterf();
+        // in.childInterf();
     }
 }
