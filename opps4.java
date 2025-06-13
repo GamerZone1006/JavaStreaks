@@ -102,15 +102,32 @@
 
 // import Outer.Inner;
 
-class Outer{
-    interface Inner{
-        void sayHi();
+// class Outer{
+//     interface Inner{
+//         void sayHi();
+//     }
+// }
+
+// class ImpInner implements Outer.Inner{
+//     public void sayHi(){
+//         System.out.println("nested.");
+//     }
+// }
+
+//Interface inside interface
+interface Parent{
+    void parentInterf();
+    interface Child{
+        void childInterf();
     }
 }
 
-class ImpInner implements Outer.Inner{
-    public void sayHi(){
-        System.out.println("nested.");
+class IinsideI implements Parent{
+    public void parentInterf(){
+        System.out.println("Mei bhar wala hu");
+    }
+    public void childInterf(){
+        System.out.println("Mei andar wala hu");
     }
 }
 
@@ -135,7 +152,11 @@ public class opps4 {
         // hehe.methodB();
         // hehe.methodC();
 
-        ImpInner nest = new ImpInner();
-        nest.sayHi();
+        // ImpInner nest = new ImpInner();
+        // nest.sayHi();
+
+        IinsideI in = new IinsideI();
+        in.parentInterf();
+        in.childInterf();
     }
 }
