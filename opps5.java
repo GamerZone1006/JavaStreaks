@@ -104,6 +104,20 @@
 
 //Exception Handling - try and catch
 
+//Cloning object
+class Student implements Clonable{
+    int rollno;
+    String name;
+    public Student(int rollno, String name){
+        this.rollno = rollno;
+        this.name = name;
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException{
+        return super.clone();
+    }
+}
+
 public class opps5 {
 
     public static void main(String[] args) {
@@ -140,16 +154,19 @@ public class opps5 {
         // Collections.sort(list, (a, b) -> a.length() - b.length());
         // System.out.println(list);
 
-        int a = 5;
-        int b = 0;
-        try{
-            int c = a/b;
-        }
-        catch(ArithmeticException e){
-            System.out.println(e.getMessage());
-        }
-        finally{
-            System.out.println("ye toh aise he tp.");
-        }
+        // int a = 5;
+        // int b = 0;
+        // try{
+        //     int c = a/b;
+        // }
+        // catch(ArithmeticException e){
+        //     System.out.println(e.getMessage());
+        // }
+        // finally{
+        //     System.out.println("ye toh aise he tp.");
+        // }
+
+        Student s1 = new Student(1, "shinchan");
+        Student cloned = (Student)s1.clone();
     }
 }
