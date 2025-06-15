@@ -117,7 +117,7 @@ public class ll {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.insertFirst(3);
-        list.insertFirst(4);
+        list.insertFirst(4);    
         list.insertEnd(5);
         list.insertInBetwn(7, 1);
         list.insertInBetwn(6, 2);
