@@ -16,7 +16,7 @@ class DoublyLinkedList{
     Node head;
     Node tail;
     public void insertFirst(int val){
-        Node  node = new Node(val);
+        Node node = new Node(val);
         node.next = head;
         node.prev = null;
         if (head != null) {
