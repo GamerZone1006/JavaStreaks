@@ -34,15 +34,18 @@ class SinglyLinkedList{
         }
         Node node = new Node(value);
         tail.next = node;
+        tail = node;
         size++;
     }
 
     public void addInBetwn(int val, int index){
         if (index == 0) {
             insertFirst(val);
+            return;
         }
         if (index == size - 1) {
             addEnd(val);
+            return;
         }
         else{
             Node temp = head;
@@ -63,6 +66,36 @@ class SinglyLinkedList{
         return node;
     }
 
+    public void delFirst(){
+        head = head.next;
+        if (head == tail) {
+            tail = null;
+        }
+        size--;
+    }
+
+    public void delLast(){
+        if (tail == head) {
+            delFirst();
+        }
+        tail = get(size-2);
+        tail.next = null;
+        size--;
+    }
+
+    public void delInBetwn(int index){
+        if (index == 0) {
+            delFirst();
+            return;
+        }
+        if (index == size) {
+            delLast();
+            return;
+        }
+        Node prev = get(index-1);
+        prev.next = prev.next.next;
+    }
+
     public void display(){
         Node temp = head;
         while (temp != null) {
@@ -78,8 +111,13 @@ public class linkedlistpract {
         list.insertFirst(1);
         list.insertFirst(2);
         list.insertFirst(3);
-        list.addEnd(4);
-        list.addEnd(3);
+        list.insertFirst(4);
+        // list.addEnd(4);
+        // list.addEnd(3);
+        // list.addInBetwn(4, 1);
+        // list.delFirst();
+        // list.delLast();
+        list.delInBetwn(2);
         list.display();
     }
 }
