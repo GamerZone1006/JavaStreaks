@@ -150,6 +150,16 @@ class LLQuestions{
         }
         head = prev;
     }
+
+    //delete a given node in a linkedlist
+    // public Node del(Node head){
+    //     Node node = head;
+    //     while (node != null) {
+    //         if (node.value == val) {
+    //             node = node.next;
+    //         }
+    //     }
+    // }
 }
 
 // import java.util.LinkedList;

@@ -178,6 +178,77 @@ class DoublyLL{
         after.prev = node;
     }
 
+    // public ListNode reverseList(ListNode head) {
+    //     ListNode prev = null;
+    //     ListNode pres = head;
+    //     ListNode next = pres.next;
+    //     while(pres != null){
+    //         pres.next = prev;
+    //         prev = pres;
+    //         pres = next;
+    //         if(next != null){
+    //             next = next.next;
+    //         }
+    //     }
+    //     head = prev;
+    //     return head;
+    // }
+
+    public Node revserseList(Node head){
+        Node prev = null;
+        Node current = head;
+        while (current != null) {
+            Node next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    // public Boolean isPalin(Node head){
+    //     Node copy = head;
+    //     Node rev = revserseList(head);
+    //     Node temp1 = copy;
+    //     Node temp2 = rev;
+    //     while (temp1 != null && temp2 != null) {
+    //         if (temp1.value != temp2.value) {
+    //             return false;
+    //         }
+    //         temp1 = temp1.next;
+    //         temp2 = temp2.next;
+    //     }
+    //     return false;
+    // }
+
+    public Node middlNode(Node head){
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    public Boolean isPalin(Node head){
+        Node mid = middlNode(head);
+        Node headSecond = revserseList(mid);
+        Node rev = headSecond;
+        while (headSecond != null && rev != null) {
+            if (headSecond.value != rev.value) {
+                break;
+            }
+            head = head.next;
+            headSecond = headSecond.next;
+        }
+        revserseList(rev);
+        if (head == null || headSecond == null) {
+            return true;
+        }
+        return false;
+    }
+
     public void display(){
         Node temp = head;
         while (temp != null) {
@@ -185,6 +256,15 @@ class DoublyLL{
             temp = temp.next;
         }
         System.out.println("khtm");
+    }
+
+    public void reroder(Node head){
+        Node mid = middlNode(head);
+        Node secondPart = revserseList(mid);
+        Node rev = secondPart;
+        while (head != null && secondPart != null) {
+            head.next = secondPart;
+        }
     }
 }
 
@@ -209,7 +289,9 @@ public class linkedlistpract {
         list.addFirst(1);
         list.addEnd(0);
         list.addEnd(9);
-        list.addInBetwen(5, 2);
+        // list.addInBetwen(5, 2);
+        // reverseList(list);
+
         list.display();
     }
 }

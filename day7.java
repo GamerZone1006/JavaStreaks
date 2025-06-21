@@ -72,37 +72,37 @@ public class day7 {
     //     return res;
     // }
 
-    public static ArrayList<Integer> spiralArray(int[][] arr) {
-        ArrayList<Integer> matrix = new ArrayList<>();
-        if (arr == null || arr.length == 0) return matrix;
-        int top = 0;
-        int bottom = arr.length - 1;
-        int left = 0;
-        int right = arr[0].length - 1;
-        while (top <= bottom && left <= right) {
-            for (int i = left; i <= right; i++) {
-                matrix.add(arr[top][i]);
-            }
-            top++;
-            for (int i = top; i <= bottom; i++) {
-                matrix.add(arr[i][right]);
-            }
-            right--;
-            if (top <= bottom) {
-                for (int i = right; i >= left; i--) {
-                    matrix.add(arr[bottom][i]);
-                }
-                bottom--;
-            }
-            if (left <= right) {
-                for (int i = bottom; i >= top; i--) {
-                    matrix.add(arr[i][left]);
-                }
-                left++;
-            }
-        }
-        return matrix;
-    }
+    // public static ArrayList<Integer> spiralArray(int[][] arr) {
+    //     ArrayList<Integer> matrix = new ArrayList<>();
+    //     if (arr == null || arr.length == 0) return matrix;
+    //     int top = 0;
+    //     int bottom = arr.length - 1;
+    //     int left = 0;
+    //     int right = arr[0].length - 1;
+    //     while (top <= bottom && left <= right) {
+    //         for (int i = left; i <= right; i++) {
+    //             matrix.add(arr[top][i]);
+    //         }
+    //         top++;
+    //         for (int i = top; i <= bottom; i++) {
+    //             matrix.add(arr[i][right]);
+    //         }
+    //         right--;
+    //         if (top <= bottom) {
+    //             for (int i = right; i >= left; i--) {
+    //                 matrix.add(arr[bottom][i]);
+    //             }
+    //             bottom--;
+    //         }
+    //         if (left <= right) {
+    //             for (int i = bottom; i >= top; i--) {
+    //                 matrix.add(arr[i][left]);
+    //             }
+    //             left++;
+    //         }
+    //     }
+    //     return matrix;
+    // }
     
 
     // public static int[] running(int[] arr){
@@ -136,11 +136,12 @@ public class day7 {
         // int[] res = running(arr);
         // System.out.println(Arrays.toString(res));
 
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-        System.out.println(spiralArray(matrix));
+        // int[][] matrix = {
+        //     {1, 2, 3},
+        //     {4, 5, 6},
+        //     {7, 8, 9}
+        // };
+        // System.out.println(spiralArray(matrix));
+
     }
 }
