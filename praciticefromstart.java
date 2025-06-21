@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class praciticefromstart {
 
@@ -251,7 +252,7 @@ public class praciticefromstart {
     //     }
     // }
 
-    public static int[] productExceptSelf(int[] nums){
+    // public static int[] productExceptSelf(int[] nums){
         // int prod = 1;
         // int[] res = new int[nums.length];
         // for(int i=0;i<nums.length;i++){
@@ -264,19 +265,40 @@ public class praciticefromstart {
         //     res[i] = prod;
         // }
         // return res;
-        int n = nums.length;
-        int[] res = new int[n];
-        res[0] = 1;
-        for(int i=1;i<n;i++){
-            res[i] = res[i-1] * nums[i-1];
-        }
-        int suffix = 1;
-        for(int i=n-1;i>=0;i--){
-            res[i] = res[i] * suffix;
-            suffix *= nums[i];
-        }
-        return res;
-    }
+    //     int n = nums.length;
+    //     int[] res = new int[n];
+    //     res[0] = 1;
+    //     for(int i=1;i<n;i++){
+    //         res[i] = res[i-1] * nums[i-1];
+    //     }
+    //     int suffix = 1;
+    //     for(int i=n-1;i>=0;i--){
+    //         res[i] = res[i] * suffix;
+    //         suffix *= nums[i];
+    //     }
+    //     return res;
+    // }
+
+    // public static void luckyNumbers(int[][] matrix){
+    //     ArrayList<Integer> list = new ArrayList<>();
+    //     for(int i=0;i<matrix.length;i++){
+    //         int min = matrix[i][0];
+    //         for(int j=0;j<matrix.length;j++){
+    //             if (matrix[i][j]<min) {
+    //                 min = matrix[i][j];
+    //             }
+    //         }
+    //         list.add(min);
+    //     }
+    //     int max = list.get(0);
+    //     for(int i=0;i<list.size();i++){
+    //         if (list.get(i)>max) {
+    //             max = list.get(i);
+    //         }
+    //     }
+    //     int[] listreturn = {max};
+    //     System.out.println(Arrays.toString(listreturn));
+    // }
 
     public static void main(String[] args) {
         // int[] arr = {0,2,1,5,3,4};
@@ -327,8 +349,15 @@ public class praciticefromstart {
         // setZeros(matrix);
         // System.out.println(Arrays.toString(matrix));
 
-        int[] arr = {1,2,3,4};
-        int[] res = productExceptSelf(arr);
-        System.out.println(Arrays.toString(res));
+        // int[] arr = {1,2,3,4};
+        // int[] res = productExceptSelf(arr);
+        // System.out.println(Arrays.toString(res));
+
+        // int[][] matrix = {
+        //     {1,10,4,2},
+        //     {9,3,8,7},
+        //     {15,16,17,12}
+        // };
+        // luckyNumbers(matrix);
     }
 }
