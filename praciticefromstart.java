@@ -300,6 +300,161 @@ public class praciticefromstart {
     //     System.out.println(Arrays.toString(listreturn));
     // }
 
+    //Binary search
+    // public static int bs(int[] arr, int target){
+    //     int start = 0;
+    //     int end = arr.length-1;
+    //     while (start<=end) {
+    //         int mid = start + (end - start)/2;
+    //         if (arr[mid] == target) {
+    //             return mid;
+    //         }
+    //         else if(target<arr[mid]){
+    //             end = mid - 1;
+    //         }
+    //         else{
+    //             start = mid + 1;
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    //ceiling of a number
+    // public static int ceiling(int[] arr, int target){
+    //     int start = 0;
+    //     int end = arr.length - 1;
+    //     while (start<=end) {
+    //         int mid = start + (end - start)/2;
+    //         if (arr[mid] == target) {
+    //             return arr[mid];
+    //         }
+    //         else if(target<arr[mid]){
+    //             end = mid - 1;
+    //         }
+    //         else{
+    //             start = mid+1;
+    //         }
+    //     }
+    //     return arr[start];
+    // }
+
+    //floor of a number
+    // public static int floor(int[] arr, int target){
+    //     int start = 0;
+    //     int end = arr.length-1;
+    //     while (start<=end) {
+    //         int mid = start + (end - start)/2;
+    //         if (arr[mid] == target) {
+    //             return arr[mid];
+    //         }
+    //         else if (target<mid) {
+    //             end = mid - 1;
+    //         }
+    //         else{
+    //             start = mid + 1;
+    //         }
+    //     }
+    //     return arr[end];
+    // }
+
+    // public static char nextGreatestLetter(char[] letters, char target) {
+    //     int start = 0;
+    //     int end = letters.length-1;
+    //     while (start<=end) {
+    //         int mid = start + (end - start)/2;
+    //         if (target<letters[mid]) {
+    //             end = mid - 1;
+    //         }
+    //         else if (target>letters[mid]) {
+    //             start = mid + 1;
+    //         }
+    //     }
+    //     return letters[start % letters.length];
+    // }
+
+    // public static int[] serahRange(int[] nums, int target){
+    //     int first = findFirst(nums, target);
+    //     int second = findSecond(nums, target);
+    //     return new int[] {first, second};
+    // }
+    // public static int findFirst(int[] nums, int target){
+    //     int start = 0;
+    //     int end = nums.length - 1;
+    //     while (start<=end) {
+    //         int mid = start + (end - start)/2;
+    //         if (nums[mid] == target) {
+    //             return mid;
+    //         }
+    //         if (target<=nums[mid]) {
+    //             end = mid - 1;
+    //         }
+    //         else start = mid + 1;
+    //     }
+    //     return -1;
+    // }
+    // public static int findSecond(int[] nums, int target){
+    //     int start = 0;
+    //     int end = nums.length - 1;
+    //     while (start<=end) {
+    //       int mid = start + (end - start)/2;
+    //         if (nums[mid] == target) {
+    //             return mid;
+    //         }
+    //         if (target<=nums[mid]) {
+    //             end = mid - 1;
+    //         }
+    //         else start = mid + 1;
+    //     }
+    //     return -1;
+    // }
+
+    // public static int peak(int[] nums){
+    //     int start = 0;
+    //     int end = nums.length-1;
+    //     while (start<end) {
+    //         int mid = start + (end - start)/2;
+    //         if (nums[mid]>nums[mid+1]) {
+    //             end = mid;
+    //         }
+    //         else{
+    //             start = mid+1;
+    //         }
+    //     }
+    //     return start;
+    // }
+
+    // public static void findkthmissing(int[] arr){
+    //     ArrayList<Integer> list = new ArrayList<>();
+    //     for(int i=0;i<arr.length;i++){
+    //         int missing = arr[i] - (i+1);
+    //         list.add(missing);
+    //     }
+    //     System.out.println(list);
+    // }
+
+    public static int countNegatives(int[][] grid){
+        // int count = 0;
+        // for(int i=0;i<grid.length;i++){
+        //     for(int j=0;j<grid.length;j++){
+        //         if (grid[i][j] < 0) {
+        //             count++;
+        //         }
+        //     }
+        // }
+        // return count;
+
+        int count = 0;
+        int row = 0;
+        int col = grid[0].length - 1;
+        while (row<grid.length && col>=0) {
+            if (grid[row][col]<0) {
+                count++;
+            }
+            // else if(grid[row][col]>)
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         // int[] arr = {0,2,1,5,3,4};
         // System.out.println(Arrays.toString(buildArray(arr)));
@@ -359,5 +514,26 @@ public class praciticefromstart {
         //     {15,16,17,12}
         // };
         // luckyNumbers(matrix);
+
+        // int[] arr = {2,4,6,7,9,11,23,34,67};
+        // System.out.println(floor(arr, 3));
+
+        // char[] arr = {'c','f','j'};
+        // System.out.println(nextGreatestLetter(arr, 'a'));
+
+        // int[] arr = {5,7,7,8,8,10};
+        // System.out.println(Arrays.toString(serahRange(arr, 8)));
+
+        // int[] arr = {0,4,10,5,2};
+        // System.out.println(peak(arr));
+
+        // int[] arr = {2,3,4,7,11};
+        // findkthmissing(arr);
+
+        // int[][] arr = {
+        //     {4,3,2,-1}, {3,2,1,-1},{1,1,-1,-2},{-1,-1,-2,-3}
+        // };
+        int[][] arr = {{3,2},{1,0}};
+        System.out.println(countNegatives(arr));
     }
 }
