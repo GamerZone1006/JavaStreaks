@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class praciticefromstart {
 
@@ -575,14 +577,64 @@ public class praciticefromstart {
     //     return x == 0 && y == 0;
     // }
 
-    public static String reverseWords(String s) {
-        String[] words = s.split(" ");
-        StringBuilder result = new StringBuilder();
-        for (String word : words) {
-            result.append(new StringBuilder(word).reverse().toString());
-            result.append(" ");
+    // public static String reverseWords(String s) {
+    //     String[] words = s.split(" ");
+    //     StringBuilder result = new StringBuilder();
+    //     for (String word : words) {
+    //         result.append(new StringBuilder(word).reverse().toString());
+    //         result.append(" ");
+    //     }
+    //     return result.toString().trim();
+    // }
+
+    // public static List<List<Integer>> threeSum(int[] nums){
+    //     Set<List<Integer>> list = new HashSet<>();
+    //     Arrays.sort(nums);
+    //     for (int i = 0; i < nums.length - 2; i++) {
+    //         for (int j = i + 1; j < nums.length - 1; j++) {
+    //             for (int k = j + 1; k < nums.length; k++) {
+    //                 if (nums[i] + nums[j] + nums[k] == 0) {
+    //                     List<Integer> triplet = Arrays.asList(nums[i], nums[j], nums[k]);
+    //                     list.add(triplet);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     return new ArrayList<>(list);
+    // }
+
+    public static String[] findWords(String[] words){
+        ArrayList<String> res = new ArrayList<>();
+        for(String ch : words){
+            if (containsLetterfromDiff(ch) == true) {
+                res.add(ch);
+            }
         }
-        return result.toString().trim();
+        return res.toArray(new String[0]);
+    }
+    public static boolean containsLetterfromDiff(String s){
+        s = s.toLowerCase();
+        String upper = "qwertyuiop";
+        String mid = "asdfghjkl";
+        String lower = "zxcvbnm";
+        String word = null;
+        char first = s.charAt(0);
+        if (upper.indexOf(first) != -1) {
+            word = upper;
+        }
+        else if (mid.indexOf(first) != -1) {
+            word = mid;
+        }
+        else {
+            word = lower;
+        }
+        for(char c : s.toCharArray()){
+            if (word.indexOf(c) == -1) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -690,6 +742,12 @@ public class praciticefromstart {
         // String moves = "LDRRLRUULR";
         // System.out.println(robotCircle(moves));
 
-        System.out.println(reverseWords("Let's take LeetCode contest"));
+        // System.out.println(reverseWords("Let's take LeetCode contest"));
+
+        // int[] arr = {-1,0,1,2,-1,-4};
+        // System.out.println(threeSum(arr));
+
+        String[] arr = {"Hello","Alaska","Dad","Peace"};
+        System.out.println(Arrays.toString(findWords(arr)));
     }
 }
