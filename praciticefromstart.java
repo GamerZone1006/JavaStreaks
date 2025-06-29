@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class praciticefromstart {
-
     // Permutation of arrays
     // public static int[] buildArray(int[] nums) {
     //     int[] ans = new int[nums.length];
@@ -515,146 +516,150 @@ public class praciticefromstart {
     // }
 
     // public static String restoreString(String s, int[] indices) {
-    // char[] result = new char[s.length()];
-    // for (int i = 0; i < s.length(); i++) {
-    // result[indices[i]] = s.charAt(i);
-    // }
-    // return new String(result);
+    //     char[] result = new char[s.length()];
+    //     for (int i = 0; i < s.length(); i++) {
+    //         result[indices[i]] = s.charAt(i);
+    //     }
+    //     return new String(result);
     // }
 
     // public static String interpret(String command) {
-    // return command.replace("()", "o").replace("(al)", "al");
+    //     return command.replace("()", "o").replace("(al)", "al");
     // }
 
     // public static String sortSentence(String s) {
-    // String[] arr = s.split(" ");
-    // String[] res = new String[arr.length];
-    // for(int i=0;i<arr.length;i++){
-    // int k = arr[i].length() - 1;
-    // int m = arr[i].charAt(k) - '0';
-    // res[m-1] = arr[i].substring(0, k);
-    // }
-    // StringBuilder sb = new StringBuilder();
-    // for(int i=0;i<res.length;i++){
-    // sb.append(res[i]).append(" ");
-    // }
-    // return (sb.toString()).trim();
+    //     String[] arr = s.split(" ");
+    //     String[] res = new String[arr.length];
+    //     for (int i = 0; i < arr.length; i++) {
+    //         int k = arr[i].length() - 1;
+    //         int m = arr[i].charAt(k) - '0';
+    //         res[m - 1] = arr[i].substring(0, k);
+    //     }
+    //     StringBuilder sb = new StringBuilder();
+    //     for (int i = 0; i < res.length; i++) {
+    //         sb.append(res[i]).append(" ");
+    //     }
+    //     return (sb.toString()).trim();
     // }
 
     // public static boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-    // StringBuilder w1 = new StringBuilder();
-    // StringBuilder w2 = new StringBuilder();
-    // for(String word : word1){
-    // w1.append(word);
-    // }
-    // for(String word : word2){
-    // w2.append(word);
-    // }
-    // return w1.toString().equals(w2.toString());
+    //     StringBuilder w1 = new StringBuilder();
+    //     StringBuilder w2 = new StringBuilder();
+    //     for (String word : word1) {
+    //         w1.append(word);
+    //     }
+    //     for (String word : word2) {
+    //         w2.append(word);
+    //     }
+    //     return w1.toString().equals(w2.toString());
     // }
 
     // public static String toLowerCase(String s) {
-    // return s.toLowerCase();
+    //     return s.toLowerCase();
     // }
 
     // public static boolean halvesAreAlike(String s) {
-    // int k = s.length() % 2;
-    // String firstHalf = "";
-    // String secondHalf = "";
-    // System.arraycopy(s,0,firstHalf,0,k);
-    // System.arraycopy(s, k+1, secondHalf, 0, k);
+    //     int k = s.length() % 2;
+    //     String firstHalf = "";
+    //     String secondHalf = "";
+    //     System.arraycopy(s, 0, firstHalf, 0, k);
+    //     System.arraycopy(s, k + 1, secondHalf, 0, k);
     // }
 
     // public static int numOfStrings(String[] patterns, String word) {
-    // int count = 0;
-    // for(String s : patterns){
-    // if (word.contains(s)) count++;
-    // }
-    // return count;
+    //     int count = 0;
+    //     for (String s : patterns) {
+    //         if (word.contains(s))
+    //             count++;
+    //     }
+    //     return count;
     // }
 
-    // public static boolean robotCircle(String moves){
-    // int x = 0, y = 0;
-    // for(char move : moves.toCharArray()){
-    // if (move == 'L') x--;
-    // else if(move == 'R') x++;
-    // else if(move == 'U') y++;
-    // else if(move == 'D') y--;
-    // }
-    // return x == 0 && y == 0;
+    // public static boolean robotCircle(String moves) {
+    //     int x = 0, y = 0;
+    //     for (char move : moves.toCharArray()) {
+    //         if (move == 'L')
+    //             x--;
+    //         else if (move == 'R')
+    //             x++;
+    //         else if (move == 'U')
+    //             y++;
+    //         else if (move == 'D')
+    //             y--;
+    //     }
+    //     return x == 0 && y == 0;
     // }
 
     // public static String reverseWords(String s) {
-    // String[] words = s.split(" ");
-    // StringBuilder result = new StringBuilder();
-    // for (String word : words) {
-    // result.append(new StringBuilder(word).reverse().toString());
-    // result.append(" ");
-    // }
-    // return result.toString().trim();
-    // }
-
-    // public static List<List<Integer>> threeSum(int[] nums){
-    // Set<List<Integer>> list = new HashSet<>();
-    // Arrays.sort(nums);
-    // for (int i = 0; i < nums.length - 2; i++) {
-    // for (int j = i + 1; j < nums.length - 1; j++) {
-    // for (int k = j + 1; k < nums.length; k++) {
-    // if (nums[i] + nums[j] + nums[k] == 0) {
-    // List<Integer> triplet = Arrays.asList(nums[i], nums[j], nums[k]);
-    // list.add(triplet);
-    // }
-    // }
-    // }
+    //     String[] words = s.split(" ");
+    //     StringBuilder result = new StringBuilder();
+    //     for (String word : words) {
+    //         result.append(new StringBuilder(word).reverse().toString());
+    //         result.append(" ");
+    //     }
+    //     return result.toString().trim();
     // }
 
-    // return new ArrayList<>(list);
+    // public static List<List<Integer>> threeSum(int[] nums) {
+    //     Set<List<Integer>> list = new HashSet<>();
+    //     Arrays.sort(nums);
+    //     for (int i = 0; i < nums.length - 2; i++) {
+    //         for (int j = i + 1; j < nums.length - 1; j++) {
+    //             for (int k = j + 1; k < nums.length; k++) {
+    //                 if (nums[i] + nums[j] + nums[k] == 0) {
+    //                     List<Integer> triplet = Arrays.asList(nums[i], nums[j], nums[k]);
+    //                     list.add(triplet);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     return new ArrayList<>(list);
     // }
 
-    // public static String[] findWords(String[] words){
-    // ArrayList<String> res = new ArrayList<>();
-    // for(String ch : words){
-    // if (containsLetterfromDiff(ch) == true) {
-    // res.add(ch);
+    // public static String[] findWords(String[] words) {
+    //     ArrayList<String> res = new ArrayList<>();
+    //     for (String ch : words) {
+    //         if (containsLetterfromDiff(ch) == true) {
+    //             res.add(ch);
+    //         }
+    //     }
+    //     return res.toArray(new String[0]);
     // }
-    // }
-    // return res.toArray(new String[0]);
-    // }
-    // public static boolean containsLetterfromDiff(String s){
-    // s = s.toLowerCase();
-    // String upper = "qwertyuiop";
-    // String mid = "asdfghjkl";
-    // String lower = "zxcvbnm";
-    // String word = null;
-    // char first = s.charAt(0);
-    // if (upper.indexOf(first) != -1) {
-    // word = upper;
-    // }
-    // else if (mid.indexOf(first) != -1) {
-    // word = mid;
-    // }
-    // else {
-    // word = lower;
-    // }
-    // for(char c : s.toCharArray()){
-    // if (word.indexOf(c) == -1) {
-    // return false;
-    // }
-    // }
-    // return true;
+
+    // public static boolean containsLetterfromDiff(String s) {
+    //     s = s.toLowerCase();
+    //     String upper = "qwertyuiop";
+    //     String mid = "asdfghjkl";
+    //     String lower = "zxcvbnm";
+    //     String word = null;
+    //     char first = s.charAt(0);
+    //     if (upper.indexOf(first) != -1) {
+    //         word = upper;
+    //     } else if (mid.indexOf(first) != -1) {
+    //         word = mid;
+    //     } else {
+    //         word = lower;
+    //     }
+    //     for (char c : s.toCharArray()) {
+    //         if (word.indexOf(c) == -1) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
     // }
 
     // public static void reverseString(char[] s) {
-    // int start = 0;
-    // int end = s.length-1;
-    // while (start<end) {
-    // char temp = s[start];
-    // s[start] = s[end];
-    // s[end] = temp;
-    // start++;
-    // end--;
-    // }
-    // System.out.println(s);
+    //     int start = 0;
+    //     int end = s.length - 1;
+    //     while (start < end) {
+    //         char temp = s[start];
+    //         s[start] = s[end];
+    //         s[end] = temp;
+    //         start++;
+    //         end--;
+    //     }
+    //     System.out.println(s);
     // }
 
     // public static String reverseVowels(String s) {
@@ -662,11 +667,11 @@ public class praciticefromstart {
     //     int start = 0;
     //     int end = s.length() - 1;
     //     String vowel = "aeiouAEIOU";
-    //     while (start<end) {
-    //         while (start<end && vowel.indexOf(word[start]) == -1) {
+    //     while (start < end) {
+    //         while (start < end && vowel.indexOf(word[start]) == -1) {
     //             start++;
     //         }
-    //         while (start<end && vowel.indexOf(word[end]) == -1) {
+    //         while (start < end && vowel.indexOf(word[end]) == -1) {
     //             end--;
     //         }
     //         char temp = word[start];
@@ -679,21 +684,21 @@ public class praciticefromstart {
     //     return ans;
     // }
 
-    // public static int[] twoSum(int[] nums, int target){
+    // public static int[] twoSum(int[] nums, int target) {
     //     HashMap<Integer, Integer> map = new HashMap<>();
-    //     for(int i=0;i<nums.length;i++){
+    //     for (int i = 0; i < nums.length; i++) {
     //         int comp = target - nums[i];
     //         if (map.containsKey(comp)) {
-    //             return new int[] {map.get(comp),i};
+    //             return new int[] { map.get(comp), i };
     //         }
-    //         map.put(nums[i],i);
+    //         map.put(nums[i], i);
     //     }
     //     return new int[] {};
     // }
 
-    // public static boolean containsDuplicate(int[] nums){
+    // public static boolean containsDuplicate(int[] nums) {
     //     HashSet<Integer> seen = new HashSet<>();
-    //     for(int num : nums){
+    //     for (int num : nums) {
     //         if (seen.contains(num)) {
     //             return true;
     //         }
@@ -705,16 +710,261 @@ public class praciticefromstart {
     // public static int firstUniqChar(String s) {
     //     char[] rep = s.toCharArray();
     //     HashMap<Character, Integer> unique = new HashMap<>();
-    //     for(char ch : rep){
-    //         unique.put(ch, unique.getOrDefault(ch, 0)+1);
+    //     for (char ch : rep) {
+    //         unique.put(ch, unique.getOrDefault(ch, 0) + 1);
     //     }
-    //     for(int i=0;i<s.length();i++){
-    //         if (unique.get(s.charAt(i))==1) {
+    //     for (int i = 0; i < s.length(); i++) {
+    //         if (unique.get(s.charAt(i)) == 1) {
     //             return i;
     //         }
     //     }
     //     return -1;
     // }
+
+    // Linear Search
+    // public static int linearSearch(int[] arr, int target) {
+    //     for (int i = 0; i < arr.length; i++) {
+    //         if (target == arr[i]) {
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    //Binary Search
+    // public static int binarySearch(int[] arr, int target){
+    //     int start = 0;
+    //     int end = arr.length - 1;
+    //     while (start<=end) {
+    //         int mid = start + (end - start)/2;
+    //         if (target == arr[mid]) {
+    //             return mid;
+    //         }
+    //         else if(target<arr[mid]){
+    //             end = mid - 1;
+    //         }
+    //         else{
+    //             start = mid + 1;
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    //Patterns
+    // public static void sqPattern(int n){
+    // * * * * *
+    // * * * * *
+    // * * * * *
+    // * * * * *
+    // * * * * *
+    //     for(int i=1;i<=n;i++){
+    //         for(int j=1;j<=n;j++){
+    //             System.out.print(" * ");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    // public static void halfRightTri(int n){
+    //     for(int i=1;i<=n;i++){
+    //         for(int j=1;j<=i;j++){
+    //             System.out.print(" * ");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    // public static void revHalTri(int n){
+    //     for(int i=1;i<=n;i++){
+    //         for(int j=(n-i+1);j>=1;j--){
+    //             System.out.print(" * ");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    // public static void hallowSq(int n){
+    //     for(int i=1;i<=n;i++){
+    //         for(int j=1;j<=n;j++){
+    //             if (i==1 || i==n) {
+    //                 System.out.print(" * ");
+    //             }
+    //             if (j==1 || j==n) {
+    //                 System.out.print(" * ");
+    //             }
+    //         }
+    //         System.out.println();
+    //     }
+    // }
+
+    // public static int missing(int[] nums){
+    //     Arrays.sort(nums);
+    //     int n = nums.length;
+    //     for(int i=0;i<n;i++){
+    //         if (nums[i] != i) {
+    //             return i;
+    //         }
+    //     }
+    //     return n;
+    // }
+
+    // public static boolean ifExist(int[] arr){
+    //     for(int i=0;i<arr.length;i++){
+    //         for(int j=i+1;j<arr.length;j++){
+    //             if(arr[i] == 2*arr[j]){
+    //                 return true;
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // public static int countNegatives(int[][] grid){
+    //     int count = 0;
+    //     for(int i=0;i<grid.length;i++){
+    //         for(int j=0;j<grid.length;j++){
+    //             if (grid[i][j] < 0) {
+    //                 count++;
+    //             }
+    //         }
+    //     }
+    //     return count;
+    // }
+
+    // public static int findDist(int[] arr1, int[] arr2, int d){
+    //     int count = 0;
+    //     for(int i=0;i<arr1.length;i++){
+    //         boolean isIt = true;
+    //         for(int j=0;j<arr2.length;j++){
+    //             if (Math.abs(arr1[i] - arr2[j]) <= d) {
+    //                 isIt = false;
+    //                 break;
+    //             }
+    //         }
+    //         if (isIt) {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
+
+    // public static int specialArray(int[] nums){
+    //     Arrays.sort(nums);
+    //     int n = nums.length;
+    //     for(int i=1;i<n;i++){
+    //         int index = greaterOrEqualTo(nums, i);
+    //         int count = n - index;
+    //         if (count == i) {
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+    // public static int greaterOrEqualTo(int[] arr, int x){
+    //     int start = 0;
+    //     int end = arr.length - 1;
+    //     int res = arr.length;
+    //     while (start<=end) {
+    //         int mid = (end - start)/2 + start;
+    //         if (arr[mid]>=x) {
+    //             res = mid;
+    //             end = mid - 1;
+    //         }
+    //         else{
+    //             start = mid + 1;
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // public static List<Integer> targetIndices(int[] nums, int target){
+    //     List<Integer> list = new ArrayList<>();
+    //     Arrays.sort(nums);
+    //     for(int i=0;i<nums.length;i++){
+    //         if (nums[i] == target) {
+    //             list.add(i);
+    //         }
+    //     }
+    //     return list;
+    // }
+
+    // public static int maximumCount(int[] nums) {
+    //     int pos = 0;
+    //     int neg = 0;
+    //     for(int i=0;i<nums.length;i++){
+    //         if (nums[i] < 0) {
+    //             neg++;
+    //         }
+    //         else if(nums[i]>0){
+    //             pos++;
+    //         }
+    //     }
+    //     return Math.max(pos, neg);
+    // }
+
+    // public static int getCommon(int[] nums1, int[] nums2) {
+    //     ArrayList<Integer> common = new ArrayList<>();
+    //     for(int i : nums1){
+    //         for(int j : nums2){
+    //             if (nums1[i] == nums2[j]) {
+    //                 common.add(nums1[i]);
+    //             }
+    //             else{
+    //                 common.add(-1);
+    //             }
+    //         }
+    //     }
+    //     int min = Collections.min(common);
+    //     return min;
+    // }
+
+    // public static int findMin(int[] nums){
+    //     int min = nums[0];
+    //     for(int i=0;i<nums.length;i++){
+    //         if (nums[i]<min) {
+    //             min = nums[i];
+    //         }
+    //     }
+    //     return min;
+    // }
+
+    // public static int[] twoSum(int[] numbers, int target) {
+    //     int res[] = new int[2];
+    //     int i=1;
+    //     int j=1;
+    //     while (i!=numbers.length && j!=numbers.length) {
+    //         if (numbers[i] + numbers[j] != target) {
+    //             res[0] = i;
+    //             res[1] = j;
+    //         }
+    //         i++;
+    //         j++;
+    //     }
+    //     return res;
+    // }
+
+    public static int[] twoSum(int[] numbers, int target) {
+        int res[] = {-1, -1};
+        for(int i=0;i<numbers.length;i++){
+            int comp = target - numbers[i];
+            int index = binarySearch(numbers, i+1, numbers.length - 1, comp);
+            if (index != -1) {
+                res[0] = i;
+                res[1] = index;
+            }
+        }
+        return res;
+    }
+
+    public static int binarySearch(int[] nums, int start, int end, int target) {
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] < target) start = mid + 1;
+            else end = mid - 1;
+        }
+        return -1;
+    }
 
     public static void main(String[] args) {
         // int[] arr = {0,2,1,5,3,4};
@@ -835,7 +1085,40 @@ public class praciticefromstart {
         // int[] arr = {2,7,11,15};
         // System.out.println(Arrays.toString(twoSum(arr, 9)));
 
-        int[] arr = {1,2,3,1};
-        System.out.println(containsDuplicate(arr));
+        // int[] arr = { 1, 2, 3, 1 };
+        // System.out.println(containsDuplicate(arr));
+
+        // int[] arr = {1,3,4,5,10, 12, 22, 34, 45,66};
+        // System.out.println(binarySearch(arr, 22));
+
+        // sqPattern(5);
+        // halfRightTri(5);
+        // revHalTri(5);
+        // hallowSq(5);
+
+        // int[] arr = {9,6,4,2,3,5,7,0,1};
+        // int[] arr = {0,1};
+        // System.out.println(missing(arr));
+
+        // int[] arr = {7,1,14,11};
+        // System.out.println(ifExist(arr));
+
+        // int[][] grid = {
+        //     {5,1,0},{-5,-5,-5}
+        // };
+        // System.out.println(countNegatives(grid));
+
+        // int[] arr1 = {4,5,8};
+        // int[] arr2 = {10,9,1,8};
+        // System.out.println(findDist(arr1, arr2, 2));
+
+        // int[] arr = {1,2,5,2,3};
+        // System.out.println(targetIndices(arr,5));
+
+        // int[] arr = {4,5,6,7,0,1,2};
+        // System.out.println(findMin(arr));
+
+        int[] arr = {2,7,11,15};
+        System.out.println(Arrays.toString(twoSum(arr, 9)));
     }
 }
