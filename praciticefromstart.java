@@ -943,25 +943,63 @@ public class praciticefromstart {
     //     return res;
     // }
 
-    public static int[] twoSum(int[] numbers, int target) {
-        int res[] = {-1, -1};
-        for(int i=0;i<numbers.length;i++){
-            int comp = target - numbers[i];
-            int index = binarySearch(numbers, i+1, numbers.length - 1, comp);
-            if (index != -1) {
-                res[0] = i;
-                res[1] = index;
+    // public static int[] twoSum(int[] numbers, int target) {
+    //     int res[] = {-1, -1};
+    //     for(int i=0;i<numbers.length;i++){
+    //         int comp = target - numbers[i];
+    //         int index = binarySearch(numbers, i+1, numbers.length - 1, comp);
+    //         if (index != -1) {
+    //             res[0] = i;
+    //             res[1] = index;
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    // public static int binarySearch(int[] nums, int start, int end, int target) {
+    //     while (start <= end) {
+    //         int mid = start + (end - start) / 2;
+    //         if (nums[mid] == target) return mid;
+    //         else if (nums[mid] < target) start = mid + 1;
+    //         else end = mid - 1;
+    //     }
+    //     return -1;
+    // }
+
+    // public static boolean searchMatrix(int[][] matrix, int target) {
+        
+    // }
+    // public static int pivot(int)
+
+    // public static int findDuplicate(int[] nums) {
+    //     int i=0;
+    //     while (i<nums.length) {
+    //         int correctInd = nums[i]-1;
+    //         if (nums[i] != nums[correctInd]) {
+    //             int temp = nums[i];
+    //             nums[i] = nums[correctInd];
+    //             nums[correctInd] = temp;
+    //         }
+    //         else{i++;}
+    //     }
+    //     for(int j=0;j<nums.length;j++){
+    //         if(j+1 != nums[j]){
+    //             return nums[j];
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    public static int kthSmallest(int[][] matrix, int k) {
+        ArrayList<Integer> oneD = new ArrayList<>();
+        for(int[] row : matrix){
+            for(int elem : row){
+                oneD.add(elem);
             }
         }
-        return res;
-    }
-
-    public static int binarySearch(int[] nums, int start, int end, int target) {
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-            if (nums[mid] == target) return mid;
-            else if (nums[mid] < target) start = mid + 1;
-            else end = mid - 1;
+        Collections.sort(oneD);
+        if (k>0 && k<=oneD.size()) {
+            return oneD.get(k-1);
         }
         return -1;
     }
@@ -1118,7 +1156,15 @@ public class praciticefromstart {
         // int[] arr = {4,5,6,7,0,1,2};
         // System.out.println(findMin(arr));
 
-        int[] arr = {2,7,11,15};
-        System.out.println(Arrays.toString(twoSum(arr, 9)));
+        // int[] arr = {2,7,11,15};
+        // System.out.println(Arrays.toString(twoSum(arr, 9)));
+
+        // int[] arr = {3,1,3,4,2};
+        // System.out.println(findDuplicate(arr));
+
+        int[][] arr = {
+            {1,2},{1,3}
+        };
+        System.out.println(kthSmallest(arr, 2));
     }
 }
