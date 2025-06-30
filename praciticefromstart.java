@@ -990,18 +990,77 @@ public class praciticefromstart {
     //     return -1;
     // }
 
-    public static int kthSmallest(int[][] matrix, int k) {
-        ArrayList<Integer> oneD = new ArrayList<>();
-        for(int[] row : matrix){
-            for(int elem : row){
-                oneD.add(elem);
+    // public static int kthSmallest(int[][] matrix, int k) {
+    //     ArrayList<Integer> oneD = new ArrayList<>();
+    //     for(int[] row : matrix){
+    //         for(int elem : row){
+    //             oneD.add(elem);
+    //         }
+    //     }
+    //     Collections.sort(oneD);
+    //     if (k>0 && k<=oneD.size()) {
+    //         return oneD.get(k-1);
+    //     }
+    //     return -1;
+    // }
+
+    // public static boolean find132pattern(int[] nums) {
+    //     for(int i=0;i<nums.length;i++){
+    //         for(int j=i+1;j<nums.length;j++){
+                // for(int k=j+1;k<nums.length;k++){
+                    // if (i<j<k && nums[i] < nums[k] < nums[j]) {
+                    //     return true;
+                    // }
+    //                 return (nums[i] < nums[k] < nums[j]);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // public static boolean isAnagram(String s, String t){
+    //     if (s.length() != t.length()) {
+    //         return false;
+    //     }
+    //     char[] sString = s.toCharArray();
+    //     char[] tString = t.toCharArray();
+    //     Arrays.sort(sString);
+    //     Arrays.sort(tString);
+    //     return Arrays.equals(sString, tString);
+    // }
+
+    // public static int[] intersection(int[] nums1, int[] nums2){
+    //     HashSet<Integer> set = new HashSet<>();
+    //     HashSet<Integer> res = new HashSet<>();
+    //     for(int num : nums1){
+    //         set.add(num);
+    //     }
+    //     for(int num : nums2){
+    //         if (set.contains(num)) {
+    //             res.add(num);
+    //         }
+    //     }
+    //     int[] ans = new int[res.size()];
+    //     int i=0;
+    //     for(int num : res){
+    //         ans[i++] = num;
+    //     }
+    //     return ans;
+    // }
+
+    public static int[] intersection(int[] nums1, int[] nums2){
+        ArrayList<Integer> res = new ArrayList<>();
+        for(int i=0;i<nums1.length;i++){
+            for(int j=0;j<nums2.length;j++){
+                if (nums1[i] == nums2[j] && !res.contains(nums1[i])) {
+                    res.add(nums1[i]);
+                }
             }
         }
-        Collections.sort(oneD);
-        if (k>0 && k<=oneD.size()) {
-            return oneD.get(k-1);
+        int[] nums = new int[res.size()];
+        for(int i=0;i<res.size();i++){
+            nums[i] = res.get(i);                   
         }
-        return -1;
+        return nums;
     }
 
     public static void main(String[] args) {
@@ -1162,9 +1221,13 @@ public class praciticefromstart {
         // int[] arr = {3,1,3,4,2};
         // System.out.println(findDuplicate(arr));
 
-        int[][] arr = {
-            {1,2},{1,3}
-        };
-        System.out.println(kthSmallest(arr, 2));
+        // int[][] arr = {
+        //     {1,2},{1,3}
+        // };
+        // System.out.println(kthSmallest(arr, 2));
+
+        int[] nums1 = {1,2,2,1};
+        int[] nums2 = {2,2};
+        System.out.println(Arrays.toString(intersection(nums1, nums2)));
     }
 }
