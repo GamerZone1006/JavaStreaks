@@ -1047,20 +1047,71 @@ public class praciticefromstart {
     //     return ans;
     // }
 
-    public static int[] intersection(int[] nums1, int[] nums2){
-        ArrayList<Integer> res = new ArrayList<>();
-        for(int i=0;i<nums1.length;i++){
-            for(int j=0;j<nums2.length;j++){
-                if (nums1[i] == nums2[j] && !res.contains(nums1[i])) {
-                    res.add(nums1[i]);
-                }
+    // public static int[] intersection(int[] nums1, int[] nums2){
+    //     ArrayList<Integer> res = new ArrayList<>();
+    //     for(int i=0;i<nums1.length;i++){
+    //         for(int j=0;j<nums2.length;j++){
+    //             if (nums1[i] == nums2[j]) {
+    //                 res.add(nums1[i]);
+    //             }
+    //         }
+    //     }
+    //     int[] nums = new int[res.size()];
+    //     for(int i=0;i<res.size();i++){
+    //         nums[i] = res.get(i);                   
+    //     }
+    //     return nums;
+    // }
+
+    // public static char findTheDifference(String s, String t) {
+    //     char[] sString = s.toCharArray();
+    //     char[] tString = t.toCharArray();
+    //     Arrays.sort(sString);
+    //     Arrays.sort(tString);
+    //     for(int i=0;i<sString.length;i++){
+    //         if (sString[i] != tString[i]) {
+    //             return tString[i];
+    //         }
+    //     }
+    //     return tString[tString.length - 1];
+    // }
+
+    // public static void reverse(int[] arr) {
+    //     int left = 0;
+    //     int right = arr.length - 1;
+
+    //     while (left < right) {
+    //         int temp = arr[left];
+    //         arr[left] = arr[right];
+    //         arr[right] = temp;
+    //         left++;
+    //         right--;
+    //     }
+    // }
+
+    // public static int thirdMax(int[] nums) {
+    //     int thmax = 0;
+    //     Arrays.sort(nums);
+    //     reverse(nums);
+    //     for(int i=0;i<nums.length;i++){
+    //         if (nums.length > 2) {
+    //             thmax = nums[2];
+    //         }
+    //         else{
+    //             thmax = nums[0];
+    //         }
+    //     }
+    //     return thmax;
+    // }
+
+    public static int possibleStringCount(String word) {
+        int count = 0;
+        for(int i=0;i<word.length()-1;i++){
+            if(word.charAt(i) == word.charAt(i+1)){
+                count++;
             }
         }
-        int[] nums = new int[res.size()];
-        for(int i=0;i<res.size();i++){
-            nums[i] = res.get(i);                   
-        }
-        return nums;
+        return count;
     }
 
     public static void main(String[] args) {
@@ -1226,8 +1277,12 @@ public class praciticefromstart {
         // };
         // System.out.println(kthSmallest(arr, 2));
 
-        int[] nums1 = {1,2,2,1};
-        int[] nums2 = {2,2};
-        System.out.println(Arrays.toString(intersection(nums1, nums2)));
+        // int[] nums1 = {1,2,2,1};
+        // int[] nums2 = {2,2};
+        // System.out.println(Arrays.toString(intersection(nums1, nums2)));
+
+        String s = "";
+        String t = "y";
+        System.out.println(findTheDifference(s, t));
     }
 }
