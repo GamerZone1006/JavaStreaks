@@ -1104,15 +1104,15 @@ public class praciticefromstart {
     //     return thmax;
     // }
 
-    public static int possibleStringCount(String word) {
-        int count = 0;
-        for(int i=0;i<word.length()-1;i++){
-            if(word.charAt(i) == word.charAt(i+1)){
-                count++;
-            }
-        }
-        return count;
-    }
+    // public static int possibleStringCount(String word) {
+    //     int count = 0;
+    //     for(int i=0;i<word.length()-1;i++){
+    //         if(word.charAt(i) == word.charAt(i+1)){
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
 
     public static void main(String[] args) {
         // int[] arr = {0,2,1,5,3,4};
