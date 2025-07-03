@@ -1114,6 +1114,14 @@ public class praciticefromstart {
     //     return count;
     // }
 
+    public static ListNode swap(ListNode head){
+        ListNode current = head;
+        ListNode next = current.next;
+        while(current != null && current.next != null){
+            
+        }
+    }
+
     public static void main(String[] args) {
         // int[] arr = {0,2,1,5,3,4};
         // System.out.println(Arrays.toString(buildArray(arr)));
