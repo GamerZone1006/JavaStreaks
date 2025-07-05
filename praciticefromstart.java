@@ -1114,12 +1114,25 @@ public class praciticefromstart {
     //     return count;
     // }
 
-    public static ListNode swap(ListNode head){
-        ListNode current = head;
-        ListNode next = current.next;
-        while(current != null && current.next != null){
+    // public static ListNode swap(ListNode head){
+    //     ListNode current = head;
+    //     ListNode next = current.next;
+    //     while(current != null && current.next != null){
             
+    //     }
+    // }
+
+    public static int findLucky(int[] arr){
+        int[] freq = new int[500];
+        for(int num : arr){
+            freq[num]++;
         }
+        for(int i = 1;i<=500;i++){
+            if (freq[i]==i) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -1289,8 +1302,11 @@ public class praciticefromstart {
         // int[] nums2 = {2,2};
         // System.out.println(Arrays.toString(intersection(nums1, nums2)));
 
-        String s = "";
-        String t = "y";
-        System.out.println(findTheDifference(s, t));
+        // String s = "";
+        // String t = "y";
+        // System.out.println(findTheDifference(s, t));
+
+        int[] arr = {2,2,3,4};
+        System.out.println(findLucky(arr));
     }
 }
