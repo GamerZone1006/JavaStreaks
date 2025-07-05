@@ -1122,17 +1122,37 @@ public class praciticefromstart {
     //     }
     // }
 
-    public static int findLucky(int[] arr){
-        int[] freq = new int[500];
-        for(int num : arr){
-            freq[num]++;
-        }
-        for(int i = 1;i<=500;i++){
-            if (freq[i]==i) {
-                return i;
+    // public static int findLucky(int[] arr){
+    //     int[] freq = new int[500];
+    //     for(int num : arr){
+    //         freq[num]++;
+    //     }
+    //     for(int i = 1;i<=500;i++){
+    //         if (freq[i]==i) {
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    public static ListNode oddEvenList(ListNode head) {
+        ListNode evenHead = new ListNode(0);
+        ListNode oddHead = new ListNode(0);
+        ListNode even = evenHead;
+        ListNode odd = oddHead;
+        for(int i=1;i<=head.length;i++){
+            if(i%2==0){
+                even.next = head;
+                even = even.next;
+            }
+            else{
+                odd.next = head;
+                odd = odd.next;
             }
         }
-        return -1;
+        odd.next = null;
+        even.next = oddHead.next;
+        return evenHead.next;
     }
 
     public static void main(String[] args) {
@@ -1306,7 +1326,7 @@ public class praciticefromstart {
         // String t = "y";
         // System.out.println(findTheDifference(s, t));
 
-        int[] arr = {2,2,3,4};
-        System.out.println(findLucky(arr));
+        // int[] arr = {2,2,3,4};
+        // System.out.println(findLucky(arr));
     }
 }
