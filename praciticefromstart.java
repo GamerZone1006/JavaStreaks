@@ -1135,25 +1135,39 @@ public class praciticefromstart {
     //     return -1;
     // }
 
-    public static ListNode oddEvenList(ListNode head) {
-        ListNode evenHead = new ListNode(0);
-        ListNode oddHead = new ListNode(0);
-        ListNode even = evenHead;
-        ListNode odd = oddHead;
-        for(int i=1;i<=head.length;i++){
-            if(i%2==0){
-                even.next = head;
-                even = even.next;
-            }
-            else{
-                odd.next = head;
-                odd = odd.next;
-            }
-        }
-        odd.next = null;
-        even.next = oddHead.next;
-        return evenHead.next;
-    }
+    // public static ListNode oddEvenList(ListNode head) {
+    //     ListNode evenHead = new ListNode(0);
+    //     ListNode oddHead = new ListNode(0);
+    //     ListNode even = evenHead;
+    //     ListNode odd = oddHead;
+    //     for(int i=1;i<=head.length;i++){
+    //         if(i%2==0){
+    //             even.next = head;
+    //             even = even.next;
+    //         }
+    //         else{
+    //             odd.next = head;
+    //             odd = odd.next;
+    //         }
+    //     }
+    //     odd.next = null;
+    //     even.next = oddHead.next;
+    //     return evenHead.next;
+    // }
+
+    // public static ListNode modifiedList(int[] nums, ListNode head) {
+    //     ListNode list = new ListNode(0);
+    //     ArrayList<Integer> arrnums = new ArrayList<>();
+    //     for(int i=0;i<nums.length;i++){
+    //         arrnums.add(nums[i]);
+    //     }
+    //     for(int number : head){
+    //         if (!head.contains(arrnums)) {
+    //             list.add(number);
+    //         }
+    //     }
+    //     return list;
+    // }
 
     public static void main(String[] args) {
         // int[] arr = {0,2,1,5,3,4};
