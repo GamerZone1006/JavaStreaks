@@ -1169,6 +1169,13 @@ public class praciticefromstart {
     //     return list;
     // }
 
+    public static String multiply(String num1, String num2) {
+        float n1 = Integer.parseInt(num1);
+        float n2 = Integer.parseInt(num2);
+        int prod = (int)(n1 * n2);
+        return Integer.toString(prod);
+    }
+
     public static void main(String[] args) {
         // int[] arr = {0,2,1,5,3,4};
         // System.out.println(Arrays.toString(buildArray(arr)));
@@ -1342,5 +1349,7 @@ public class praciticefromstart {
 
         // int[] arr = {2,2,3,4};
         // System.out.println(findLucky(arr));
+
+        System.out.println(multiply("2", "3"));
     }
 }
