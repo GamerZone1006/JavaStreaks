@@ -1169,11 +1169,21 @@ public class praciticefromstart {
     //     return list;
     // }
 
-    public static String multiply(String num1, String num2) {
-        float n1 = Integer.parseInt(num1);
-        float n2 = Integer.parseInt(num2);
-        int prod = (int)(n1 * n2);
-        return Integer.toString(prod);
+    // public static String multiply(String num1, String num2) {
+    //     float n1 = Integer.parseInt(num1);
+    //     float n2 = Integer.parseInt(num2);
+    //     int prod = (int)(n1 * n2);
+    //     return Integer.toString(prod);
+    // }
+
+    public static void tri(int[] arr){
+        if(arr.length < 1) return;
+        int[] temp = new int[arr.length - 1];
+        for(int i=0;i<arr.length-1;i++){
+            temp[i] = arr[i] + arr[i+1];
+        }
+        tri(temp);
+        System.out.println(Arrays.toString(temp));
     }
 
     public static void main(String[] args) {
@@ -1350,6 +1360,9 @@ public class praciticefromstart {
         // int[] arr = {2,2,3,4};
         // System.out.println(findLucky(arr));
 
-        System.out.println(multiply("2", "3"));
+        // System.out.println(multiply("2", "3"));
+
+        int[] arr = {1,2,3,4,5};
+        tri(arr);
     }
 }
