@@ -1176,14 +1176,23 @@ public class praciticefromstart {
     //     return Integer.toString(prod);
     // }
 
-    public static void tri(int[] arr){
-        if(arr.length < 1) return;
-        int[] temp = new int[arr.length - 1];
-        for(int i=0;i<arr.length-1;i++){
-            temp[i] = arr[i] + arr[i+1];
+    // public static void tri(int[] arr){
+    //     if(arr.length < 1) return;
+    //     int[] temp = new int[arr.length - 1];
+    //     for(int i=0;i<arr.length-1;i++){
+    //         temp[i] = arr[i] + arr[i+1];
+    //     }
+    //     tri(temp);
+    //     System.out.println(Arrays.toString(temp));
+    // }
+
+    public static int[] sortedSquares(int[] nums) {
+        int[] sq = new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            sq[i] = nums[i]*nums[i];
         }
-        tri(temp);
-        System.out.println(Arrays.toString(temp));
+        Arrays.sort(sq);
+        return sq;
     }
 
     public static void main(String[] args) {
