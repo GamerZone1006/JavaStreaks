@@ -1186,13 +1186,52 @@ public class praciticefromstart {
     //     System.out.println(Arrays.toString(temp));
     // }
 
-    public static int[] sortedSquares(int[] nums) {
-        int[] sq = new int[nums.length];
-        for(int i=0;i<nums.length;i++){
-            sq[i] = nums[i]*nums[i];
+    // public static int[] sortedSquares(int[] nums) {
+    //     int[] sq = new int[nums.length];
+    //     for(int i=0;i<nums.length;i++){
+    //         sq[i] = nums[i]*nums[i];
+    //     }
+    //     Arrays.sort(sq);
+    //     return sq;
+    // }
+
+    // public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+    //     List<List<Integer>> res = new ArrayList<>();
+    //     backtrack(candidates, target, 0, new ArrayList<>(), res);
+    //     return res;
+    // }
+    // private static void backtrack(int[] candidates, int target, int index, List<Integer> path, List<List<Integer>> result) {
+    //     if (target == 0) {
+    //         result.add(new ArrayList<>(path));
+    //         return;
+    //     }
+    //     if (target < 0 || index == candidates.length) {
+    //         return;
+    //     }
+    //     path.add(candidates[index]);
+    //     backtrack(candidates, target - candidates[index], index, path, result); 
+    //     path.remove(path.size() - 1); 
+    //     backtrack(candidates, target, index + 1, path, result);
+    // }
+
+    //binary search using recursion
+    public static int search(int[] nums, int target){
+        return helper(nums, target, 0, nums.length-1);
+    }
+    public static int helper(int[] nums, int target, int start, int end){
+        while (start<=end) {
+            int mid = start + (end - start)/2;
+            if (target == nums[mid]) {
+                return mid;
+            }
+            if (target<nums[mid]) {
+                return helper(nums, target, start, mid-1);
+            }
+            else{
+                return helper(nums, target, mid+1, end);
+            }
         }
-        Arrays.sort(sq);
-        return sq;
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -1371,7 +1410,10 @@ public class praciticefromstart {
 
         // System.out.println(multiply("2", "3"));
 
-        int[] arr = {1,2,3,4,5};
-        tri(arr);
+        // int[] arr = {1,2,3,4,5};
+        // tri(arr);
+        
+        int[] nums = {-1,0,3,5,9,12};
+        System.out.println(search(nums, 9));
     }
 }
