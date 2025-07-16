@@ -1,4 +1,7 @@
 
+import java.util.Arrays;
+
+
 public class binarysearch {
     // public static int bs(int[] arr, int target, int start, int end){
     //     start = 0;
@@ -198,16 +201,18 @@ public class binarysearch {
     //     }  
     // }
 
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int[] res = new int[nums1.length + nums2.length];
-        System.arraycopy(nums1, 0, res, 0, nums1.length);
-        System.arraycopy(nums2, 0, res, nums1.length, res.length);
-        Arrays.sort(res);
-        int low = 0;
-        int high = res.length - 1;
-        double median = (low + high)/2;
-        return median;
-    }
+    // public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    //     int[] res = new int[nums1.length + nums2.length];
+    //     System.arraycopy(nums1, 0, res, 0, nums1.length);
+    //     System.arraycopy(nums2, 0, res, nums1.length, res.length);
+    //     Arrays.sort(res);
+    //     int low = 0;
+    //     int high = res.length - 1;
+    //     double median = (low + high)/2;
+    //     return median;
+    // }
+
+    // public static String 
 
     public static void main(String[] args) {
         int[] arr = {2,3, 13, 17, 20, 23, 34, 55, 78};
