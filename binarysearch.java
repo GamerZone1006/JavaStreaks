@@ -213,6 +213,19 @@ public class binarysearch {
     // }
 
     // public static String 
+    // public int maximumLength(int[] nums) {
+    //     int count = 0;
+    //     int i=0;
+    //     while(i = nums.length(nums)){
+    //         if(isModulo){
+    //             count += 1;
+    //         }
+    //     }
+    //     return count;
+    // }
+    // public static boolean isModulo(int[] nums){
+    //     nums.leng
+    // }
 
     public static void main(String[] args) {
         int[] arr = {2,3, 13, 17, 20, 23, 34, 55, 78};
