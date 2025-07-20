@@ -223,9 +223,36 @@ public class binarysearch {
     //     }
     //     return count;
     // }
-    // public static boolean isModulo(int[] nums){
-    //     nums.leng
+    // public int minimumLength(String str) {
+    //     int n = str.length();
+    //     int p = 0;
+    //     int s = n - 1;
+    //     while (p<s && str.charAt(p) == str.charAt(s)) {
+    //         int ch = str.charAt(p);
+    //         while (p<=s && str.charAt(p) == ch) {
+    //             p++;
+    //         }
+    //         while (p<=s && str.charAt(s) == ch) {
+    //             s--;
+    //         }
+    //     }
+    //     return (s-p+1);
     // }
+
+    //fibonacci numbers
+    // public static int fib(int n){
+    //     if(n<2){
+    //         return n;
+    //     }
+    //     return fib(n-1) + fib(n-2);
+    // }
+
+    //power of 3
+    public static boolean isPow(int n){
+        if(n == 1) return true;
+        if(n == 0 || n%3 != 0) return false;
+        else return isPow(n/3);
+    }
 
     public static void main(String[] args) {
         int[] arr = {2,3, 13, 17, 20, 23, 34, 55, 78};
@@ -247,5 +274,6 @@ public class binarysearch {
         // int res = infArray(arr, target);
         // System.out.println(res);
         // System.out.println(findRange(arr, 20));
+        System.out.println(isPow(27));
     }
 }
