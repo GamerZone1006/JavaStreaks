@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 
 
 public class binarysearch {
@@ -248,10 +247,21 @@ public class binarysearch {
     // }
 
     //power of 3
-    public static boolean isPow(int n){
-        if(n == 1) return true;
-        if(n == 0 || n%3 != 0) return false;
-        else return isPow(n/3);
+    // public static boolean isPow(int n){
+    //     if(n == 1) return true;
+    //     if(n == 0 || n%3 != 0) return false;
+    //     else return isPow(n/3);
+    // }
+
+    //number of steps to reduce to 0
+    public static int noofsteps(int num){
+        if(num == 0) return 0;
+        if(num%2 == 0){
+            return 1+noofsteps(num/2);
+        }
+        else{
+            return 1+noofsteps(num-1);
+        }
     }
 
     public static void main(String[] args) {
@@ -274,6 +284,7 @@ public class binarysearch {
         // int res = infArray(arr, target);
         // System.out.println(res);
         // System.out.println(findRange(arr, 20));
-        System.out.println(isPow(27));
+        // System.out.println(isPow(27));
+        System.out.println(noofsteps(14));
     }
 }
