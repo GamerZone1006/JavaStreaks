@@ -1,6 +1,4 @@
 
-
-
 public class binarysearch {
     // public static int bs(int[] arr, int target, int start, int end){
     //     start = 0;
@@ -254,18 +252,133 @@ public class binarysearch {
     // }
 
     //number of steps to reduce to 0
-    public static int noofsteps(int num){
-        if(num == 0) return 0;
-        if(num%2 == 0){
-            return 1+noofsteps(num/2);
+    // public static int noofsteps(int num){
+    //     if(num == 0) return 0;
+    //     if(num%2 == 0){
+    //         return 1+noofsteps(num/2);
+    //     }
+    //     else{
+    //         return 1+noofsteps(num-1);
+    //     }
+    // }
+
+    //N Queens
+    // public static List<List<String>> solveNQueens(int n){
+    //     boolean[][] board = new boolean[n][n];
+    //     int row = 0;
+    //     List<List<String>> res = new ArrayList<>();
+    //     queens(board, res, row);
+    //     return res;
+    // }
+    // public static void queens(boolean[][] board, List<List<String>> res, int row){
+    //     if(row == board.length){
+    //         res.add(display(board));
+    //         return;
+    //     }
+    //     for(int col = 0; col<board.length; col++){
+    //         if(isSafe(board, row, col)){
+    //             board[row][col] = true;
+    //             queens(board, res, row+1);
+    //             board[row][col] = false;
+    //         }
+    //     }
+    // }
+    // public static List<String> display(boolean[][] board){
+    //     List<String> res = new ArrayList<>();
+    //     for(boolean[] row : board){
+    //         StringBuilder sb = new StringBuilder();
+    //         for(boolean element : row){
+    //             if(element){
+    //                 sb.append("Q");
+    //             }
+    //             else{
+    //                 sb.append(".");
+    //             }
+    //         }
+    //         res.add(sb.toString());
+    //     }
+    //     return res;
+    // }
+    // public static boolean isSafe(boolean[][] board, int row, int col){
+        //vertical check
+        // for(int i=0;i<row;i++){
+        //     if(board[i][col]) return false;
+        // }
+        //upper left diagonal
+        // for(int i=row-1, j=col-1; i>=0 && j>=0; i--, j--){
+        //     if(board[i][j]) return  false;
+        // }
+        //upper right diagonal
+    //     for(int i=row-1, j=col+1; i>=0 && j<board.length; i--, j++){
+    //         if(board[i][j]) return false;
+    //     }
+    //     return true;
+    // }
+
+    // public static List<List<Integer>> comboSum(int[] candidates, int target){
+    //     List<List<Integer>> res = new ArrayList<>();
+    //     backtrack(candidates, target, 0, res, new ArrayList<>());
+    //     return res;
+    // }
+    // public static void backtrack(int[] candidates, int target, int index, List<List<Integer>> res, List<List<Integer>> path){
+    //     if(target == 0){
+    //         res.addAll(new ArrayList<>(path));
+    //         return;
+    //     }
+    //     if(target<0 || index = candidates.length) return;
+    //     path.add(candidates[index]);
+    //     backtrack(candidates, target-candidates[index], index, res, path);
+    //     path.remove(path.size()-1);
+    // }
+
+    // public static boolean isMountArray(int[] arr){
+    //     int index = 0;
+    //     int n = arr.length;
+    //     while(index < n-1){
+    //         if(arr[index] < arr[index + 1]){
+    //             index++;
+    //         }
+    //         else break;
+    //     }
+    //     if(index == 0 || index == n-1) return false;
+    //     while(index < n-1){
+    //         if(arr[index] > arr[index + 1]) index++;
+    //         else break;
+    //     }
+    //     return (index == n-1);
+    // }
+
+    // public boolean areSentencesSimilar(String sentence1, String sentence2) {
+    //     if(sentence1.length() > sentence2.length()){
+    //         areSentencesSimilar(sentence2, sentence1);
+    //     }
+    //     String[] larger = sentence1.split(" ");
+    //     String[] smaller = sentence2.split(" ");
+    //     int start = 0;
+    //     int end1 = larger.length - 1;
+    //     int end2 = smaller.length - 1;
+    //     while(start<=end1 && smaller[start].equals(larger[start])){
+    //         start++;
+    //     }
+    //     while(start<=end1 && smaller[end1].equals(larger[end2])){
+    //         end1--;
+    //         end2--;
+    //     }
+    //     return (start>=end1);
+    // }
+
+    public static String addSpaces(String s, int[] spaces) {
+        StringBuilder sb = new StringBuilder(s);
+        int extraSpace = 0;
+        for(int space : spaces){
+            sb.insert(space + extraSpace, " ");
+            extraSpace++;
         }
-        else{
-            return 1+noofsteps(num-1);
-        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        int[] arr = {2,3, 13, 17, 20, 23, 34, 55, 78};
+        // int[] arr = {2,3, 13, 17, 20, 23, 34, 30, 20};
         // int target = 16;
         // int res = bs(arr, target);
         // int res = oabs(arr, target);
@@ -285,6 +398,10 @@ public class binarysearch {
         // System.out.println(res);
         // System.out.println(findRange(arr, 20));
         // System.out.println(isPow(27));
-        System.out.println(noofsteps(14));
+        // System.out.println(noofsteps(14));
+        // System.out.println(isMountArray(arr));
+        String s = "LeetcodeHelpsMeLearn";
+        int[] spaces = {8, 13, 15};
+        System.out.println(addSpaces(s, spaces));
     }
 }
