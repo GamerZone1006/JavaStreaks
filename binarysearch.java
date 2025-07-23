@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 public class binarysearch {
     // public static int bs(int[] arr, int target, int start, int end){
@@ -367,15 +368,31 @@ public class binarysearch {
     //     return (start>=end1);
     // }
 
-    public static String addSpaces(String s, int[] spaces) {
-        StringBuilder sb = new StringBuilder(s);
-        int extraSpace = 0;
-        for(int space : spaces){
-            sb.insert(space + extraSpace, " ");
-            extraSpace++;
-        }
-        return sb.toString();
-    }
+    // public static String addSpaces(String s, int[] spaces) {
+    //     StringBuilder sb = new StringBuilder(s);
+    //     int extraSpace = 0;
+    //     for(int space : spaces){
+    //         sb.insert(space + extraSpace, " ");
+    //         extraSpace++;
+    //     }
+    //     return sb.toString();
+    // }
+
+    // public static int mostFreqElem(int[] arr){
+    //     HashMap<Integer, Integer> freqMap = new HashMap<>();
+    //     int ans = -1;
+    //     int freq = 0;
+    //     for(int i=0;i<arr.length;i++){
+    //         freqMap.put(arr[i], freqMap
+    //         .getOrDefault(arr[i], 0)+1);
+    //         if(freqMap.get(arr[i]) > freq){
+    //             freq = freqMap.get(arr[i]);
+    //             ans = arr[i];
+    //         }
+    //     }
+    //     return ans;
+    // }
+    
 
     public static void main(String[] args) {
         // int[] arr = {2,3, 13, 17, 20, 23, 34, 30, 20};
