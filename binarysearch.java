@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.Arrays;
 
 public class binarysearch {
     // public static int bs(int[] arr, int target, int start, int end){
@@ -392,7 +392,31 @@ public class binarysearch {
     //     }
     //     return ans;
     // }
-    
+
+    // public static int findFreq(int[] arr){
+    //     int freq = 0;
+    //     int n = arr.length;
+    //     HashMap<Integer, Integer> map = new HashMap<>();
+    //     for(int i=0; i<n; i++){
+    //         map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
+    //         freq = Math.max(freq, map.get(arr[i]));
+    //     }
+    //     return freq;
+    // }
+
+    public static int maxLen(int[] arr) {
+        Arrays.sort(arr);
+        int countZero = 0;
+        int countOne = 0;
+        for(int i=0;i<arr.length;i++){
+            if (arr[i] == 0) {
+                countZero += 1;
+            }
+            else if (arr[i] == 1) {
+                countOne += 1;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         // int[] arr = {2,3, 13, 17, 20, 23, 34, 30, 20};
@@ -417,8 +441,12 @@ public class binarysearch {
         // System.out.println(isPow(27));
         // System.out.println(noofsteps(14));
         // System.out.println(isMountArray(arr));
-        String s = "LeetcodeHelpsMeLearn";
-        int[] spaces = {8, 13, 15};
-        System.out.println(addSpaces(s, spaces));
+        // String s = "LeetcodeHelpsMeLearn";
+        // int[] spaces = {8, 13, 15};
+        // System.out.println(addSpaces(s, spaces));
+        // int[] arr = {1, 2, 3, 3};
+        // System.out.println(findFreq(arr));
+        int[] arr = {1, 0, 1, 1, 1, 0, 0};
+        System.out.println(maxLen(arr));
     }
 }
