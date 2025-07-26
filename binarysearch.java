@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class binarysearch {
     // public static int bs(int[] arr, int target, int start, int end){
@@ -404,18 +405,61 @@ public class binarysearch {
     //     return freq;
     // }
 
-    public static int maxLen(int[] arr) {
-        Arrays.sort(arr);
-        int countZero = 0;
-        int countOne = 0;
-        for(int i=0;i<arr.length;i++){
-            if (arr[i] == 0) {
-                countZero += 1;
-            }
-            else if (arr[i] == 1) {
-                countOne += 1;
-            }
+    // public static int maxLen(int[] arr) {
+    //     Arrays.sort(arr);
+    //     int countZero = 0;
+    //     int countOne = 0;
+    //     for(int i=0;i<arr.length;i++){
+    //         if (arr[i] == 0) {
+    //             countZero += 1;
+    //         }
+    //         else if (arr[i] == 1) {
+    //             countOne += 1;
+    //         }
+    //     }
+    // }
+
+    public long maximumSubarraySum(int[] nums, int k) {
+        long sum = 0;
+        long maxSum = 0;
+        int n = nums.length;
+        int index = 0;
+        while(index < n && index < k){
+            sum += nums[index];
+            index++;
         }
+        maxSum = sum;
+        for(int i=1;i<n-k+1;i++){
+            int prev = nums[i-1];
+            int next = nums[i+k-1];
+            sum = sum - prev + next;
+            maxSum = Math.max(maxSum, sum);
+        }
+        return maxSum;
+    }
+
+    public long maximumSubarraySumHehe(int[] nums, int k) {
+        HashSet<Integer> set = new HashSet<>();
+        long sum = 0;
+        long maxSum = 0;
+        int i = 0;
+        for(int j=0;j<nums.length;j++){
+            while(set.contains(nums[j])){
+                set.remove(nums[i]);
+                sum -= nums[i];
+                i++;
+            }
+            set.add(nums[j]);
+            sum += nums[j];
+            if(j-i+1 == k){
+                maxSum = Math.max(maxSum, sum);
+                set.remove(nums[i]);
+                sum -= nums[i];
+                i++;
+            }
+            j++;
+        }
+        return maxSum;
     }
 
     public static void main(String[] args) {
