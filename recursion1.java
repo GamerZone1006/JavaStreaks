@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class recursion1 {
     // function that takes a numbera and prints it
@@ -59,6 +58,18 @@ public class recursion1 {
     //     }
     // }
 
+    //factorial of a number
+    // public static int fact(int n){
+    //     if(n<1) return 1;
+    //     return n*fact(n-1);
+    // }
+
+    //sum of digits in a number
+    public static int sumOfDigits(int n){
+        if(n == 0) return 1;
+        return (n%10) * sumOfDigits(n/10);
+    }
+
     public static void main(String[] args) {
         // takeNoNprint();
         // firstFiveNos();
@@ -71,5 +82,7 @@ public class recursion1 {
         // int n = 1010110;
         // int i = 3;
         // System.out.println(ithbit(n, i));
+        // System.out.println(fact(2));
+        System.out.println(sumOfDigits(1342));
     }
 }
