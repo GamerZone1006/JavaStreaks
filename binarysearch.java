@@ -419,48 +419,48 @@ public class binarysearch {
     //     }
     // }
 
-    public long maximumSubarraySum(int[] nums, int k) {
-        long sum = 0;
-        long maxSum = 0;
-        int n = nums.length;
-        int index = 0;
-        while(index < n && index < k){
-            sum += nums[index];
-            index++;
-        }
-        maxSum = sum;
-        for(int i=1;i<n-k+1;i++){
-            int prev = nums[i-1];
-            int next = nums[i+k-1];
-            sum = sum - prev + next;
-            maxSum = Math.max(maxSum, sum);
-        }
-        return maxSum;
-    }
+    // public long maximumSubarraySum(int[] nums, int k) {
+    //     long sum = 0;
+    //     long maxSum = 0;
+    //     int n = nums.length;
+    //     int index = 0;
+    //     while(index < n && index < k){
+    //         sum += nums[index];
+    //         index++;
+    //     }
+    //     maxSum = sum;
+    //     for(int i=1;i<n-k+1;i++){
+    //         int prev = nums[i-1];
+    //         int next = nums[i+k-1];
+    //         sum = sum - prev + next;
+    //         maxSum = Math.max(maxSum, sum);
+    //     }
+    //     return maxSum;
+    // }
 
-    public long maximumSubarraySumHehe(int[] nums, int k) {
-        HashSet<Integer> set = new HashSet<>();
-        long sum = 0;
-        long maxSum = 0;
-        int i = 0;
-        for(int j=0;j<nums.length;j++){
-            while(set.contains(nums[j])){
-                set.remove(nums[i]);
-                sum -= nums[i];
-                i++;
-            }
-            set.add(nums[j]);
-            sum += nums[j];
-            if(j-i+1 == k){
-                maxSum = Math.max(maxSum, sum);
-                set.remove(nums[i]);
-                sum -= nums[i];
-                i++;
-            }
-            j++;
-        }
-        return maxSum;
-    }
+    // public long maximumSubarraySumHehe(int[] nums, int k) {
+    //     HashSet<Integer> set = new HashSet<>();
+    //     long sum = 0;
+    //     long maxSum = 0;
+    //     int i = 0;
+    //     for(int j=0;j<nums.length;j++){
+    //         while(set.contains(nums[j])){
+    //             set.remove(nums[i]);
+    //             sum -= nums[i];
+    //             i++;
+    //         }
+    //         set.add(nums[j]);
+    //         sum += nums[j];
+    //         if(j-i+1 == k){
+    //             maxSum = Math.max(maxSum, sum);
+    //             set.remove(nums[i]);
+    //             sum -= nums[i];
+    //             i++;
+    //         }
+    //         j++;
+    //     }
+    //     return maxSum;
+    // }
 
     public static void main(String[] args) {
         // int[] arr = {2,3, 13, 17, 20, 23, 34, 30, 20};
