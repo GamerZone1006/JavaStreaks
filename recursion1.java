@@ -65,9 +65,40 @@ public class recursion1 {
     // }
 
     //sum of digits in a number
-    public static int sumOfDigits(int n){
-        if(n == 0) return 1;
-        return (n%10) * sumOfDigits(n/10);
+    // public static int sumOfDigits(int n){
+    //     if(n == 0) return 1;
+    //     return (n%10) * sumOfDigits(n/10);
+    // }
+
+    //reverse a number
+    // public static int rev(int n, int rev){
+    //     if(n==0) return rev;
+    //     return rev(n/10, rev*10+n%10);
+    // }
+
+    // public static void skip(String p, String up){
+    //     if(up.isEmpty()){
+    //         System.out.println(p);
+    //         return;
+    //     }
+    //     char ch = up.charAt(0);
+    //     if(ch == 'a'){
+    //         skip(p, up.substring(1));
+    //     }
+    //     else{
+    //         skip(p+ch, up.substring(1));
+    //     }
+    // }
+
+    //subsets
+    public static void subsets(String p, String up){
+        if(up.isEmpty()){
+            System.out.println(p);
+            return;
+        }
+        char ch = up.charAt(0);
+        subsets(p+ch, up.substring(1));
+        subsets(p, up.substring(1));
     }
 
     public static void main(String[] args) {
@@ -83,6 +114,7 @@ public class recursion1 {
         // int i = 3;
         // System.out.println(ithbit(n, i));
         // System.out.println(fact(2));
-        System.out.println(sumOfDigits(1342));
+        // System.out.println(sumOfDigits(1342));
+        subsets("", "abc");
     }
 }
