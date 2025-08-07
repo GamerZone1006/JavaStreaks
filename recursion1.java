@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class recursion1 {
     // function that takes a numbera and prints it
@@ -92,17 +93,39 @@ public class recursion1 {
     // }
 
     //subsets
-    public static ArrayList<String> subsets(String p, String up){
-        ArrayList<String> list = new ArrayList<>();
-        if(up.isEmpty()){
-            list.add(p);
-            return list;
-        }
-        char ch = up.charAt(0);
-        list.addAll(subsets(p+ch, up.substring(1)));
-        list.addAll(subsets(p, up.substring(1)));
-        list.addAll(subsets(p+(ch+0), up.substring(1)));
+    // public static ArrayList<String> subsets(String p, String up){
+    //     ArrayList<String> list = new ArrayList<>();
+    //     if(up.isEmpty()){
+    //         list.add(p);
+    //         return list;
+    //     }
+    //     char ch = up.charAt(0);
+    //     list.addAll(subsets(p+ch, up.substring(1)));
+    //     list.addAll(subsets(p, up.substring(1)));
+    //     list.addAll(subsets(p+(ch+0), up.substring(1)));
+    //     return list;
+    // }
+
+    public static List<String> letterCombinations(String digits) {
+        List<String> list = new ArrayList<>();
+        if(digits.isEmpty()) return list;
+        list.addAll(keypad("", digits));
         return list;
+    }
+    public static void keypad(String p, String up){
+        String[] map = {
+            "", "", "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"
+        };
+        StringBuffer list = new StringBuffer();
+        if(up.isEmpty()){
+            list.append(p);
+            return;
+        }
+        int digit = up.charAt(0) - '0';
+        String letters = map[digit];
+        for(char ch : letters.toCharArray()){
+            list.append(keypad(p+ch, up.substring(1)));
+        }
     }
 
     public static void main(String[] args) {
@@ -119,7 +142,9 @@ public class recursion1 {
         // System.out.println(ithbit(n, i));
         // System.out.println(fact(2));
         // System.out.println(sumOfDigits(1342));
-        ArrayList<String> list = subsets("", "abbbc");
+        // ArrayList<String> list = subsets("", "abbbc");
+        // System.out.println(list);
+        List<String> list = letterCombinations("23");
         System.out.println(list);
     }
 }
