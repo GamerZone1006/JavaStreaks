@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class recursion1 {
     // function that takes a numbera and prints it
@@ -91,14 +92,17 @@ public class recursion1 {
     // }
 
     //subsets
-    public static void subsets(String p, String up){
+    public static ArrayList<String> subsets(String p, String up){
+        ArrayList<String> list = new ArrayList<>();
         if(up.isEmpty()){
-            System.out.println(p);
-            return;
+            list.add(p);
+            return list;
         }
         char ch = up.charAt(0);
-        subsets(p+ch, up.substring(1));
-        subsets(p, up.substring(1));
+        list.addAll(subsets(p+ch, up.substring(1)));
+        list.addAll(subsets(p, up.substring(1)));
+        list.addAll(subsets(p+(ch+0), up.substring(1)));
+        return list;
     }
 
     public static void main(String[] args) {
@@ -115,6 +119,7 @@ public class recursion1 {
         // System.out.println(ithbit(n, i));
         // System.out.println(fact(2));
         // System.out.println(sumOfDigits(1342));
-        subsets("", "abc");
+        ArrayList<String> list = subsets("", "abbbc");
+        System.out.println(list);
     }
 }
