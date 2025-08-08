@@ -104,28 +104,44 @@ public class recursion1 {
     //     list.addAll(subsets(p, up.substring(1)));
     //     list.addAll(subsets(p+(ch+0), up.substring(1)));
     //     return list;
+    // }  
+
+    // public static List<String> letterCombinations(String digits) {
+    //     List<String> list = new ArrayList<>();
+    //     if(digits.isEmpty()) return list;
+    //     list.addAll(keypad("", digits));
+    //     return list;
+    // }
+    // public static void keypad(String p, String up){
+    //     String[] map = {
+    //         "", "", "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"
+    //     };
+    //     StringBuffer list = new StringBuffer();
+    //     if(up.isEmpty()){
+    //         list.append(p);
+    //         return;
+    //     }
+    //     int digit = up.charAt(0) - '0';
+    //     String letters = map[digit];
+    //     for(char ch : letters.toCharArray()){
+    //         list.append(keypad(p+ch, up.substring(1)));
+    //     }
     // }
 
-    public static List<String> letterCombinations(String digits) {
-        List<String> list = new ArrayList<>();
-        if(digits.isEmpty()) return list;
-        list.addAll(keypad("", digits));
+    public static List<List<Integer>> subsets(int[] nums){
+        List<List<Integer>> list = new ArrayList<>();
+        subset(list, new ArrayList<>(), 0, nums);
         return list;
     }
-    public static void keypad(String p, String up){
-        String[] map = {
-            "", "", "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"
-        };
-        StringBuffer list = new StringBuffer();
-        if(up.isEmpty()){
-            list.append(p);
+    public static void subset(List<List<Integer>> res, ArrayList<Integer> p, int index, int[] nums){
+        if(index == nums.length){
+            res.add(new ArrayList<>(p));
             return;
         }
-        int digit = up.charAt(0) - '0';
-        String letters = map[digit];
-        for(char ch : letters.toCharArray()){
-            list.append(keypad(p+ch, up.substring(1)));
-        }
+        p.add(nums[index]);
+        subset(res, p, index+1, nums);
+        p.remove(p.size()-1);
+        subset(res, p, index+1, nums);
     }
 
     public static void main(String[] args) {
