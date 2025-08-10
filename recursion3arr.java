@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class recursion3arr {
 
@@ -146,32 +147,54 @@ public class recursion3arr {
     //     bs(arr, row, col+1);
     // }
 
-    public static void swap(int[] arr, int first, int last){
-        int temp = arr[first];
-        arr[first] = arr[last];
-        arr[last] = temp;
-    }
+    // public static void swap(int[] arr, int first, int last){
+    //     int temp = arr[first];
+    //     arr[first] = arr[last];
+    //     arr[last] = temp;
+    // }
 
-    public static int max(int[] arr, int start, int end){
-        int max = start;
-        for(int i=start; i<=end;i++){
-            if (arr[i]>arr[max]) {
-                max = i;
-            }
-        }
-        return max;
-    }
+    // public static int max(int[] arr, int start, int end){
+    //     int max = start;
+    //     for(int i=start; i<=end;i++){
+    //         if (arr[i]>arr[max]) {
+    //             max = i;
+    //         }
+    //     }
+    //     return max;
+    // }
 
-    public static void ss(int[] arr, int start, int end){
-        if (end == 0) {
+    // public static void ss(int[] arr, int start, int end){
+    //     if (end == 0) {
+    //         return;
+    //     }
+    //     int max = max(arr, start, end);
+    //     int last = end;
+    //     if (arr[last]<arr[max]) {
+    //         swap(arr, max, last);
+    //     }
+    //     ss(arr, start, end - 1);
+    // }
+
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        boolean[] isUsed = new boolean[nums.length];
+        permutation(res, nums, new ArrayList<>(), isUsed);
+        return res;
+    }
+    public static void permutation(List<List<Integer>> res, int[] nums, List<Integer> path, boolean[] isUsed){
+        if(path.size() == nums.length){
+            res.add(new ArrayList<>(path));
             return;
         }
-        int max = max(arr, start, end);
-        int last = end;
-        if (arr[last]<arr[max]) {
-            swap(arr, max, last);
+        for(int i=0;i<nums.length;i++){
+            if(!isUsed[i]){
+                isUsed[i] = true;
+                path.add(nums[i]);
+                permutation(res, nums, path, isUsed);
+                path.remove(path.size() - 1);
+                isUsed[i] = false;
+            }
         }
-        ss(arr, start, end - 1);
     }
 
     public static void main(String[] args) {
@@ -190,10 +213,10 @@ public class recursion3arr {
         // sqStars(0, 0, 5);
         // revTri(0, 0, 5);
         // tri(0, 0, 5);
-        int[] arr = {4,3,2,1};
+        // int[] arr = {4,3,2,1};
         // bs(arr, arr.length-1, 0);
         // System.out.println(Arrays.toString(arr));
-        ss(arr, 0, arr.length-1);
-        System.out.println(Arrays.toString(arr));
+        // ss(arr, 0, arr.length-1);
+        // System.out.println(Arrays.toString(arr));
     }
 }
