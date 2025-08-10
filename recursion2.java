@@ -90,14 +90,20 @@ public class recursion2 {
     // }
 
     //no of steps to make a number 0
-    public static int steps(int n, int count){
-        if (n==0) {
-            return count;
-        }
-        if (n%2==0) {
-            return steps(n/2, count+1);
-        }
-        return steps(n-1, count+1);
+    // public static int steps(int n, int count){
+    //     if (n==0) {
+    //         return count;
+    //     }
+    //     if (n%2==0) {
+    //         return steps(n/2, count+1);
+    //     }
+    //     return steps(n-1, count+1);
+    // }
+
+    public static void rev(int n){
+        if(n==0) return;
+        System.out.print(n%10);
+        rev(n/10);
     }
 
     public static void main(String[] args) {
@@ -111,6 +117,7 @@ public class recursion2 {
         // System.out.println(isPalin(12321));
         // System.out.println(zeros(302040,0));
         // System.out.println(reverse(12345, 0));
-        System.out.println(steps(14, 0));
+        // System.out.println(steps(14, 0));
+        rev(12345);
     }
 }
