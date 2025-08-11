@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class mazes{
 
@@ -58,6 +57,39 @@ public class mazes{
     //     }
     // }
 
+    // public static void maze(String p, int row, int col){
+    //     if (row==1 && col==1) {
+    //         System.out.println(p);
+    //         return;
+    //     }
+    //     if(row > 1) maze(p+'D', row-1, col);
+    //     if(col > 1) maze(p+'R', row, col-1);
+    // }
+
+    // public static ArrayList<String> maze(String p, int r, int c){
+    //     ArrayList<String> list = new ArrayList<>();
+    //     if(r==1 && c==1){
+    //         list.add(p);
+    //         return list;
+    //     }
+    //     if(r>1) list.addAll(maze(p+"D", r-1, c));
+    //     if(c>1) list.addAll(maze(p+"R", r, c-1));
+    //     return list;
+    // }
+
+    public static int uniquePaths(int m, int n) {
+        int count = 0;
+        if(m == 1 && n==1){
+            return 1;
+        }
+        if(m>1){
+            count += uniquePaths(m-1, n);
+        }
+        if(n>1){
+            count += uniquePaths(m, n-1);
+        }
+        return count;
+    }
     
 
     public static void main(String[] args) {
@@ -69,5 +101,7 @@ public class mazes{
         //     {true, true, true}
         // };
         // mazeWithObstacles("", maze, 0, 0);
+        // System.out.println(maze("", 3, 3));
+        System.out.println(uniquePaths(36, 7));
     }
 }
