@@ -77,18 +77,29 @@ public class mazes{
     //     return list;
     // }
 
-    public static int uniquePaths(int m, int n) {
-        int count = 0;
-        if(m == 1 && n==1){
-            return 1;
-        }
-        if(m>1){
-            count += uniquePaths(m-1, n);
-        }
-        if(n>1){
-            count += uniquePaths(m, n-1);
-        }
-        return count;
+    // public static int uniquePaths(int m, int n) {
+    //     int count = 0;
+    //     if(m == 1 && n==1){
+    //         return 1;
+    //     }
+    //     if(m>1){
+    //         count += uniquePaths(m-1, n);
+    //     }
+    //     if(n>1){
+    //         count += uniquePaths(m, n-1);
+    //     }
+    //     return count;
+    // }
+
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        return uniquePaths(0, 0, obstacleGrid);
+    }
+
+    public static int uniquePaths(int r, int c, int[][] obsGrid){
+        if(r>=obsGrid.length || c>=obsGrid[0].length) return 0;
+        if(obsGrid[r][c] == 1) return 0;
+        if(r==obsGrid.length-1 && c==obsGrid[0].length) return 1;
+        return uniquePaths(r+1, c, obsGrid) + uniquePaths(r, c+1, obsGrid);
     }
     
 
@@ -102,6 +113,6 @@ public class mazes{
         // };
         // mazeWithObstacles("", maze, 0, 0);
         // System.out.println(maze("", 3, 3));
-        System.out.println(uniquePaths(36, 7));
+        // System.out.println(uniquePaths(36, 7));
     }
 }
