@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 
-// 1. 1 to n
 // 2. n to 1
 // 3. fact
 // 4. sum of n num
@@ -86,18 +85,40 @@ public class recursionrev {
     //     }
     // }
 
-    public static ArrayList<String> permutation(String p, String up){
+    // public static ArrayList<String> permutation(String p, String up){
+    //     ArrayList<String> list = new ArrayList<>();
+    //     if(up.isEmpty()){
+    //         list.add(p);
+    //         return list;
+    //     }
+    //     char ch = up.charAt(0);
+    //     for(int i=0;i<=p.length();i++){
+    //         String f = p.substring(0, i);
+    //         String s = p.substring(i, p.length());
+    //         list.addAll(permutation((f+ch+s), up.substring(1)));
+    //     }
+    //     return list;
+    // }
+
+    // public static void subsets(String p, String up){
+    //     if(up.isEmpty()){
+    //         System.out.println(p);
+    //         return;
+    //     }
+    //     char ch = up.charAt(0);
+    //     subsets(p, up.substring(1));
+    //     subsets(p+ch, up.substring(1));
+    // }
+
+    public static ArrayList<String> subsets(String p, String up){
         ArrayList<String> list = new ArrayList<>();
         if(up.isEmpty()){
             list.add(p);
             return list;
         }
         char ch = up.charAt(0);
-        for(int i=0;i<=p.length();i++){
-            String f = p.substring(0, i);
-            String s = p.substring(i, p.length());
-            list.addAll(permutation((f+ch+s), up.substring(1)));
-        }
+        list.addAll(subsets(p, up.substring(1)));
+        list.addAll(subsets(p+ch, up.substring(1)));
         return list;
     }
 
@@ -110,6 +131,7 @@ public class recursionrev {
         // System.out.println(isPalin(12345431));
         // int[] arr = {1,2,3,4,5};
         // System.out.println(linearSearch(2, arr, 0));
-        System.out.println(permutation("", "abc"));
+        // System.out.println(permutation("", "abc"));
+        System.out.println(subsets("", "up"));
     }
 }
