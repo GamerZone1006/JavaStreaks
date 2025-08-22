@@ -1,7 +1,4 @@
 
-import java.util.ArrayList;
-
-// 2. n to 1
 // 3. fact
 // 4. sum of n num
 // 5. reverse a num
@@ -110,16 +107,70 @@ public class recursionrev {
     //     subsets(p+ch, up.substring(1));
     // }
 
-    public static ArrayList<String> subsets(String p, String up){
-        ArrayList<String> list = new ArrayList<>();
-        if(up.isEmpty()){
-            list.add(p);
-            return list;
+    // public static ArrayList<String> subsets(String p, String up){
+    //     ArrayList<String> list = new ArrayList<>();
+    //     if(up.isEmpty()){
+    //         list.add(p);
+    //         return list;
+    //     }
+    //     char ch = up.charAt(0);
+    //     list.addAll(subsets(p, up.substring(1)));
+    //     list.addAll(subsets(p+ch, up.substring(1)));
+    //     return list;
+    // }
+
+    // public static String revString(String s){
+    //     if(s.isEmpty()){
+    //         return "";
+    //     }
+    //     return (s.charAt(s.length()-1) + revString(s.substring(0, s.length()-1)));
+    // }
+
+    // public static void subseq(String p, String up){
+    //     if(up.isEmpty()){
+    //         System.out.println(p);
+    //         return;
+    //     }
+    //     char ch = up.charAt(0);
+    //     subseq(p, up.substring(1));
+    //     subseq(p+ch, up.substring(1));
+    // }
+
+    // public static int sumArr(int[] arr, int index){
+    //     if(index == 0){
+    //         return arr[index];
+    //     }
+    //     return arr[index] + sumArr(arr, index-1);
+    // }
+
+    // public static String revString(String s){
+    //     if(s.isEmpty()){
+    //         return "";
+    //     }
+    //     return s.charAt(s.length()-1) + revString(s.substring(0, s.length()-1));
+    // }
+    // public static boolean  isPalin(String s){
+    //     String rev = revString(s);
+    //     return (s == null ? rev == null : s.equals(rev));
+    // }
+
+    // public static int countPaths(int r, int c){
+    //     if(r==1 || c==1){
+    //         return 1;
+    //     }
+    //     int count = 0;
+    //     count += countPaths(r-1, c);
+    //     count += countPaths(r, c-1);
+    //     return count;
+    // }
+
+    public static void binaryList(String p, int n){
+        if(p.length()==n){
+            System.out.println(p);
+            return;
         }
-        char ch = up.charAt(0);
-        list.addAll(subsets(p, up.substring(1)));
-        list.addAll(subsets(p+ch, up.substring(1)));
-        return list;
+        binaryList(p+'0', n);
+        binaryList(p+'1', n);
     }
 
     public static void main(String[] args) {
@@ -132,6 +183,12 @@ public class recursionrev {
         // int[] arr = {1,2,3,4,5};
         // System.out.println(linearSearch(2, arr, 0));
         // System.out.println(permutation("", "abc"));
-        System.out.println(subsets("", "up"));
+        // System.out.println(subsets("", "up"));
+        // System.out.println(revString("abc"));
+        // subseq("", "up");
+        // System.out.println(sumArr(arr, arr.length-1));
+        // System.out.println(isPalin("hehehe"));
+        // System.out.println(countPaths(2, 2));
+        binaryList("", 2);
     }
 }
