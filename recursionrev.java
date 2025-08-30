@@ -1,8 +1,4 @@
 
-import java.util.ArrayList;
-
-
-// 3. fact
 // 4. sum of n num
 // 5. reverse a num
 // 6. palindrome
@@ -167,23 +163,49 @@ public class recursionrev {
     //     return count;
     // }
 
-    public static void binaryList(String p, int n){
-        if(p.length()==n){
-            System.out.println(p);
-            return;
+    // public static void binaryList(String p, int n){
+    //     if(p.length()==n){
+    //         System.out.println(p);
+    //         return;
+    //     }
+    //     binaryList(p+'0', n);
+    //     binaryList(p+'1', n);
+    // }
+    // public static ArrayList<String> binaryString(String p, int n){
+    //     ArrayList<String> list = new ArrayList<>();
+    //     if(p.length() == n){
+    //         list.add(p);
+    //         return list;
+    //     }
+    //     list.addAll(binaryString(p+'0', n));
+    //     list.addAll(binaryString(p+'1', n));
+    //     return list;
+    // }
+
+    // public static List<List<Integer>> combinationSum(int[] candidates, int target){
+    //     List<List<Integer>> list = new ArrayList<>();
+    //     backtrack(candidates, target, list, new ArrayList(), 0);
+    //     return list;
+    // }
+    // public static void backtrack(int[] candidates, int target, List<List<Integer>> list, List<Integer> path, int index){
+    //     if(target == 0){
+    //         list.add(new ArrayList<>(path));
+    //         return;
+    //     }
+    //     if(target<0 || index == candidates.length){
+    //         return;
+    //     }
+    //     path.add(candidates[index]);
+    //     backtrack(candidates, target - candidates[index], list, path, index+1);
+    //     path.remove(path.size()-1);
+    //     backtrack(candidates, target, list, path, index+1);
+    // }
+
+    public static int rev(int n, int rev){
+        if(n==0){
+            return rev;
         }
-        binaryList(p+'0', n);
-        binaryList(p+'1', n);
-    }
-    public static ArrayList<String> binaryString(String p, int n){
-        ArrayList<String> list = new ArrayList<>();
-        if(p.length() == n){
-            list.add(p);
-            return list;
-        }
-        list.addAll(binaryString(p+'0', n));
-        list.addAll(binaryString(p+'1', n));
-        return list;
+        return rev(n/10, rev*10 + (n%10));
     }
 
     public static void main(String[] args) {
@@ -202,7 +224,10 @@ public class recursionrev {
         // System.out.println(sumArr(arr, arr.length-1));
         // System.out.println(isPalin("hehehe"));
         // System.out.println(countPaths(2, 2));
-        binaryList("", 2);
-        System.out.println(binaryString("", 2));
+        // binaryList("", 2);
+        // System.out.println(binaryString("", 2));
+        // System.out.println(combinationSum(arr, 5));
+        // System.out.println(rev(1234));
+        System.out.println(rev(1234, 0));
     }
 }
