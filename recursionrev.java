@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+
 // 3. fact
 // 4. sum of n num
 // 5. reverse a num
@@ -172,6 +175,16 @@ public class recursionrev {
         binaryList(p+'0', n);
         binaryList(p+'1', n);
     }
+    public static ArrayList<String> binaryString(String p, int n){
+        ArrayList<String> list = new ArrayList<>();
+        if(p.length() == n){
+            list.add(p);
+            return list;
+        }
+        list.addAll(binaryString(p+'0', n));
+        list.addAll(binaryString(p+'1', n));
+        return list;
+    }
 
     public static void main(String[] args) {
         // q1(5);
@@ -190,5 +203,6 @@ public class recursionrev {
         // System.out.println(isPalin("hehehe"));
         // System.out.println(countPaths(2, 2));
         binaryList("", 2);
+        System.out.println(binaryString("", 2));
     }
 }
