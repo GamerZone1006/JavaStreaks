@@ -208,6 +208,8 @@ public class recursionrev {
         return rev(n/10, rev*10 + (n%10));
     }
 
+    public static 
+
     public static void main(String[] args) {
         // q1(5);
         // q2(5);
@@ -228,6 +230,6 @@ public class recursionrev {
         // System.out.println(binaryString("", 2));
         // System.out.println(combinationSum(arr, 5));
         // System.out.println(rev(1234));
-        System.out.println(rev(1234, 0));
+        // System.out.println(rev(1234, 0));
     }
 }
