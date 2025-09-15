@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 
 public class startserev{
     // public static void days(int n){
@@ -93,14 +92,21 @@ public class startserev{
     //     return n == cubicSum(n);
     // }
 
-    public static ArrayList<Integer> divisors(int n){
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int i=1; i<=n ;i++){
-            if(n%i == 0){
-                list.add(i);
-            }
+    // public static ArrayList<Integer> divisors(int n){
+    //     ArrayList<Integer> list = new ArrayList<>();
+    //     for(int i=1; i<=n ;i++){
+    //         if(n%i == 0){
+    //             list.add(i);
+    //         }
+    //     }
+    //     return list;
+    // }
+
+    public static boolean isPrime(int n){
+        for(int i=2;i<n;i++){
+            if(n%i == 0) return false;
         }
-        return list;
+        return true;
     }
 
     public static void main(String[] args) {
@@ -123,9 +129,10 @@ public class startserev{
         // System.out.println(isPalin(123431));
         // System.out.println(gcd(15, 20));
         // System.out.println(isArms(153));
-        ArrayList<Integer> list = new ArrayList<>();
-        list = divisors(36);
-        System.out.println(list);
+        // ArrayList<Integer> list = new ArrayList<>();
+        // list = divisors(36);
+        // System.out.println(list);
+        System.out.println(isPrime(14));
         // sc.close();
     }
 }
